@@ -3,7 +3,8 @@ import { SafeImage } from "../ui/safe-image";
 
 export default function RDTechGroupLogo({
   size = 100,
-}: { readonly size?: number } = {}) {
+  className = "",
+}: { readonly size?: number; readonly className?: string } = {}) {
   return (
     <div>
       <SafeImage
@@ -11,6 +12,7 @@ export default function RDTechGroupLogo({
         alt="Logo"
         width={size}
         height={size}
+        className={className}
       />
     </div>
   );
