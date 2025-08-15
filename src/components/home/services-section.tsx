@@ -58,22 +58,28 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="min-h-screen flex flex-col py-28 bg-gray-50 snap-start"
+      className="min-h-screen flex flex-col py-20 snap-start"
       data-header-theme="dark"
     >
-      {/* Masked Services Grid */}
-      <div className="relative container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {/* Heading row */}
-        <div className="absolute -top-6 -left-2 sm:-left-6 z-[50] container mx-auto px-4 flex flex-col md:flex-row justify-between items-start mb-16">
-          <FadeIn>
-            <h2 className="text-2xl md:text-3xl font-bold text-primary bg-white/80 backdrop-blur-md py-2 px-4 rounded-lg shadow-lg">
-              Our Solutions
-            </h2>
-          </FadeIn>
-        </div>
+      {/* Heading row */}
+      <div className="container mx-auto px-4 flex flex-col items-center">
+        <FadeIn>
+          <h2 className="w-auto text-xl md:text-2xl font-bold text-white bg-primary backdrop-blur-md py-2 px-4 rounded-full shadow-md">
+            Our Solutions
+          </h2>
+        </FadeIn>
+        <FadeIn delay={100}>
+          <p className="text-muted-foreground mt-1">
+            Comprehensive technology solutions for modern enterprises
+          </p>
+        </FadeIn>
+      </div>
+
+      {/* Services Grid */}
+      <div className="relative container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
         {services.map((service, index) => (
           <FadeIn key={index} delay={index * 100}>
-            <div className="relative w-full h-72 overflow-hidden group cursor-pointer rounded-4xl rounded-tl-none">
+            <div className="relative w-full h-72 overflow-hidden group cursor-pointer rounded-4xl shadow-lg">
               <SafeImage
                 src=""
                 alt={service.title}
