@@ -1,0 +1,97 @@
+import { Building, Camera, Network, Server, Shield, Wifi } from "lucide-react";
+
+import { FadeIn } from "@/components/ui/fade-in";
+import { SafeImage } from "../ui/safe-image";
+
+export default function ServicesSection() {
+  const services = [
+    {
+      icon: Shield,
+      title: "Security & RMS",
+      description:
+        "Comprehensive security solutions including CCTV, access control, and threat detection systems.",
+      video:
+        "https://videos.pexels.com/video-files/7710243/7710243-uhd_2560_1440_30fps.mp4",
+    },
+    {
+      icon: Network,
+      title: "Network & Communication",
+      description:
+        "End-to-end structured cabling, converged data & voice solutions with redundant failover technology.",
+      video:
+        "https://videos.pexels.com/video-files/18069803/18069803-uhd_1440_2560_24fps.mp4",
+    },
+    {
+      icon: Building,
+      title: "Building Automation",
+      description:
+        "Intelligent networked control products for smart building management and automation.",
+      video:
+        "https://videos.pexels.com/video-files/18069166/18069166-uhd_2560_1440_24fps.mp4",
+    },
+    {
+      icon: Server,
+      title: "Enterprise Computing",
+      description:
+        "Complete range of enterprise servers, storage solutions, and disaster recovery systems.",
+      video:
+        "https://videos.pexels.com/video-files/18069701/18069701-uhd_2560_1440_24fps.mp4",
+    },
+    {
+      icon: Wifi,
+      title: "Mobility Infrastructure",
+      description:
+        "Corporate wireless coverage with support for multiple mobility applications and location tracking.",
+      video:
+        "https://videos.pexels.com/video-files/18069232/18069232-uhd_2560_1440_24fps.mp4",
+    },
+    {
+      icon: Camera,
+      title: "Audio Visual Solutions",
+      description:
+        "Professional AV systems, background music, and large format display solutions.",
+      video:
+        "https://videos.pexels.com/video-files/18069232/18069232-uhd_2560_1440_24fps.mp4",
+    },
+  ];
+
+  return (
+    <section
+      id="services"
+      className="min-h-screen flex flex-col py-28 bg-gray-50 snap-start"
+      data-header-theme="dark"
+    >
+      {/* Masked Services Grid */}
+      <div className="relative container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Heading row */}
+        <div className="absolute -top-6 -left-2 sm:-left-6 z-[50] container mx-auto px-4 flex flex-col md:flex-row justify-between items-start mb-16">
+          <FadeIn>
+            <h2 className="text-2xl md:text-3xl font-bold text-primary bg-white/80 backdrop-blur-md py-2 px-4 rounded-lg shadow-lg">
+              Our Solutions
+            </h2>
+          </FadeIn>
+        </div>
+        {services.map((service, index) => (
+          <FadeIn key={index} delay={index * 100}>
+            <div className="relative w-full h-72 overflow-hidden group cursor-pointer rounded-4xl rounded-tl-none">
+              <SafeImage
+                src=""
+                alt={service.title}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+              />
+
+              {/* Overlay with icon & text */}
+              <div className="absolute inset-0 bg-black/40 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center text-white p-6">
+                <service.icon className="w-10 h-10 mb-4" />
+                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                <p className="text-sm text-center">{service.description}</p>
+              </div>
+            </div>
+          </FadeIn>
+        ))}
+      </div>
+    </section>
+  );
+}
