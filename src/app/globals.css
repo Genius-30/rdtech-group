@@ -105,14 +105,6 @@
   }
 }
 
-.scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-.scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
-}
-
 /* blue + gold + white
 Background: #FFFFFF
 Primary Blue: #007cf7 (or your brand blue)

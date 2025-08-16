@@ -21,7 +21,7 @@ export default function ClientsSection() {
 
   return (
     <section
-      className="relative py-20 bg-primary/5 overflow-hidden snap-start"
+      className="relative py-20 overflow-hidden bg-primary/5"
       data-header-theme="dark"
     >
       <div className="container mx-auto px-4 flex flex-col items-center">
@@ -38,7 +38,7 @@ export default function ClientsSection() {
         </FadeIn>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10 mt-8">
+      <div className="container mx-auto px-4 relative z-10 mt-12">
         {/* Marquee Row 1 */}
         <div className="relative w-full overflow-hidden mb-8">
           <div className="flex animate-marquee space-x-12">

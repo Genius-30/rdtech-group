@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 
 import AAContractingLogo from "@/components/logos/aa-contracting-logo";
 import { ArrowRight } from "lucide-react";
@@ -7,85 +7,155 @@ import CoreGridLogo from "@/components/logos/core-grid-logo";
 import { FadeIn } from "@/components/ui/fade-in";
 import Link from "next/link";
 import RDTechLogo from "@/components/logos/rdtech-logo";
+import { SafeImage } from "../ui/safe-image";
 
 export default function CompaniesSection() {
   const companies = [
     {
-      logo: AAContractingLogo,
-      name: "AA Contracting",
-      subtitle: "Al Ausus Al Arbaa General Contracting",
-      description:
-        "Multi-disciplinary contracting firm with successful completion of several projects in the region as individual contractor and joint venture partner.",
-      href: "/companies/aa-contracting",
-    },
-    {
-      logo: CoreGridLogo,
-      name: "Core Grid",
-      subtitle: "Intelligent Networked Control Products",
-      description:
-        "Systems integration company specializing in intelligent networked control products for building automation with secure remote access solutions.",
-      href: "/companies/core-grid",
-    },
-    {
-      logo: RDTechLogo,
       name: "RDTech FZE",
-      subtitle: "Security Solution & Service Provider",
+      tagline: "Security Systems & ELV/ICT Solutions",
       description:
-        "Security systems integration company providing physical security solutions including CCTV, AI surveillance, access control, and maintenance services.",
-      href: "/companies/rdtech-fze",
+        "Pioneering advanced security technology to safeguard critical infrastructure across the UAE. From access control to comprehensive surveillance systems.",
+      icon: RDTechLogo,
+      href: "/rdtech-fze",
+      image: "",
+      services: [
+        "Access Control Systems",
+        "CCTV & Surveillance",
+        "Fire Alarm Systems",
+        "Network Infrastructure",
+      ],
+      color: "bg-green-600",
+      buttonLabel: "RDTech FZE",
+    },
+    {
+      name: "Al Ausus Al Arbaa General Contracting",
+      tagline: "Multi-disciplinary Contracting Excellence",
+      description:
+        "Delivering comprehensive construction and contracting services with precision and reliability. Building the infrastructure of tomorrow.",
+      icon: AAContractingLogo,
+      href: "/aa-contracting",
+      image: "",
+      services: [
+        "Civil Construction",
+        "MEP Services",
+        "Project Management",
+        "Facility Maintenance",
+      ],
+      color: "bg-blue-600",
+      buttonLabel: "AA Contracting",
+    },
+    {
+      name: "CoreGrid",
+      tagline: "Building Automation & Smart Solutions",
+      description:
+        "Transforming buildings into intelligent, efficient spaces through cutting-edge automation and control systems.",
+      icon: CoreGridLogo,
+      href: "/coregrid",
+      image: "",
+      services: [
+        "Building Management Systems",
+        "Lighting Control",
+        "Home Automation",
+        "Energy Management",
+      ],
+      color: "bg-purple-600",
+      buttonLabel: "CoreGrid",
     },
   ];
 
   return (
     <section
-      className="min-h-screen flex flex-col py-20 snap-start bg-primary/5"
+      className="min-h-screen flex flex-col py-20 bg-primary/5"
       data-header-theme="dark"
     >
-      <div className="container mx-auto px-4 flex flex-col items-center">
+      {/* Heading */}
+      <div className="container mx-auto px-4 flex flex-col items-center text-center">
         <FadeIn>
-          <h2 className="w-auto text-xl md:text-2xl font-bold text-white bg-primary backdrop-blur-md py-2 px-4 rounded-full shadow-md">
+          <h2 className="text-xl md:text-2xl font-bold text-white bg-primary backdrop-blur-md py-2 px-6 rounded-full shadow-lg">
             Our Companies
           </h2>
         </FadeIn>
         <FadeIn delay={100}>
-          <p className="text-muted-foreground mt-1">
+          <p className="text-muted-foreground mt-3 max-w-2xl">
             Three specialized companies working together to deliver
-            comprehensive technology solutions
+            comprehensive solutions across security, construction, and
+            automation sectors.
           </p>
         </FadeIn>
       </div>
 
-      <div className="relative container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-        {companies.map((company, index) => (
-          <FadeIn key={index} delay={index * 100}>
-            <Card className="group h-full hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 rounded-4xl shadow-lg border-none bg-primary/5 hover:bg-primary/10">
-              <CardContent className="p-8 text-center h-full flex flex-col py-2">
-                <div className="mb-8 flex justify-center">
-                  <div className="p-4 aspect-square bg-white/80 backdrop-blur-sm rounded-3xl shadow-md group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
-                    <company.logo size={72} />
+      {/* Cards */}
+      <div className="relative container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-14">
+        {companies.map((company) => {
+          const Logo = company.icon;
+          return (
+            <FadeIn key={company.name} delay={200} className="h-full">
+              <Card
+                key={company.name}
+                className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 py-0 h-full pb-6"
+              >
+                <div className="relative h-64 overflow-hidden">
+                  <SafeImage
+                    src={company.image || ""}
+                    alt={company.name}
+                    width={800}
+                    height={400}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
+                  <div className="aspect-square absolute top-4 left-4 rounded-full bg-white p-1 flex items-center justify-center">
+                    <Logo size={60} />
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-primary mb-2 group-hover:text-primary/80 transition-colors duration-300">
-                  {company.name}
-                </h3>
-                <p className="text-sm text-accent font-medium mb-4 opacity-80">
-                  {company.subtitle}
-                </p>
-                <p className="text-muted-foreground leading-relaxed mb-8 flex-grow text-sm">
-                  {company.description}
-                </p>
+                <CardContent className="px-8">
+                  <div className="space-y-4">
+                    <div>
+                      <h3 className="font-heading text-2xl font-bold text-gray-900 mb-2">
+                        {company.name}
+                      </h3>
+                      <p className="text-primary font-semibold">
+                        {company.tagline}
+                      </p>
+                    </div>
 
-                <Link href={company.href} className="mt-auto">
-                  <Button className="w-full group-hover:bg-primary group-hover:text-white transition-all duration-300 rounded-full shadow-md hover:shadow-lg">
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                    <p className="text-muted-foreground leading-relaxed">
+                      {company.description}
+                    </p>
+
+                    <div className="space-y-2">
+                      <h4 className="font-semibold text-foreground">
+                        Key Services:
+                      </h4>
+                      <div className="grid grid-cols-2 gap-1">
+                        {company.services.map((service) => (
+                          <div
+                            key={service}
+                            className="text-sm text-muted-foreground"
+                          >
+                            • {service}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter className="mt-auto">
+                  <Button
+                    asChild
+                    className="w-full group-hover:bg-primary/90 transition-colors duration-300"
+                  >
+                    <Link href={`/companies/${company.href}`}>
+                      Explore {company.buttonLabel}
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
                   </Button>
-                </Link>
-              </CardContent>
-            </Card>
-          </FadeIn>
-        ))}
+                </CardFooter>
+              </Card>
+            </FadeIn>
+          );
+        })}
       </div>
     </section>
   );
