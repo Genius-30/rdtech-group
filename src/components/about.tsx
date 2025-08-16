@@ -1,5 +1,6 @@
 import React from 'react'
 import { CheckCircle, ShieldCheck, Lightbulb, Users, Leaf  } from "lucide-react"
+import Newsletter from './newsletter';
 
 const values = [
     {
@@ -226,6 +227,12 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      <div className="bg-black text-gray-300 pt-16 ">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Newsletter />
+        </div>
+      </div>
     </>
   )
 }

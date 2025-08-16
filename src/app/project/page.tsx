@@ -1,11 +1,8 @@
 import React from 'react'
-import About from '@/components/about'
 
 function page() {
   return (
-    <div>
-      <About />
-    </div>
+    <div>project page</div>
   )
 }
 

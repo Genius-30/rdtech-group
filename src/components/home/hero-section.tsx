@@ -2,16 +2,15 @@
 
 import { ArrowRight, Play } from "lucide-react";
 import { useEffect, useState } from "react";
-
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
 import { NumberTicker } from "../magicui/number-ticker";
 
 export function HeroSection() {
   const images = [
-    "/home/hero/hero.png",
-    "/placeholder.png",
-    "/placeholder.png",
+    "/home/hero/alAususHero.png",
+    "/home/hero/dubai_2.png",
+    "/home/hero/rdTechHero.png",
   ];
 
   const [current, setCurrent] = useState(0);
@@ -34,9 +33,10 @@ export function HeroSection() {
         {images.map((img, index) => (
           <div
             key={index}
-            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+            className={`absolute inset-0 bg-cover bg-no-repeat transition-opacity duration-1000 ${
               index === current ? "opacity-100" : "opacity-0"
-            }`}
+            } ${ index === 2 ? "bg-bottom": "bg-top"}
+            `}
             style={{
               backgroundImage: `url('${img}')`,
             }}
