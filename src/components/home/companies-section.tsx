@@ -66,7 +66,7 @@ export default function CompaniesSection() {
 
   return (
     <section
-      className="min-h-screen flex flex-col py-20 bg-primary/5"
+      className="min-h-screen flex flex-col py-20 bg-gray-50"
       data-header-theme="dark"
     >
       {/* Heading */}

@@ -60,23 +60,17 @@ export function Header() {
   const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
-    const sections = document.querySelectorAll("[data-header-theme]");
+    const handleScroll = () => {
+      if (window.scrollY < window.innerHeight) {
+        setTheme("light"); // Top of screen → white
+      } else {
+        setTheme("dark"); // After h-screen → black
+      }
+    };
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.find((entry) => entry.isIntersecting);
-        if (visible) {
-          setTheme(
-            visible.target.getAttribute("data-header-theme") as "light" | "dark"
-          );
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    sections.forEach((sec) => observer.observe(sec));
-
-    return () => observer.disconnect();
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (

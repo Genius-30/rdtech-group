@@ -1,5 +1,86 @@
-import React from "react";
+import AboutSection from "@/components/companies/about-section";
+import ContactSection from "@/components/companies/contact-section";
+import CoreGridLogo from "@/components/logos/core-grid-logo";
+import HeroSection from "@/components/companies/hero-section";
+import { Metadata } from "next";
+import ServicesSection from "@/components/companies/services-section";
+
+export const metadata: Metadata = {
+  title: "CoreGrid | Building Automation & Smart Solutions",
+  description:
+    "CoreGrid transforms buildings into intelligent, efficient spaces with cutting-edge automation and control systems. Creating smarter, sustainable environments for better living and working.",
+  openGraph: {
+    title: "CoreGrid | Building Automation & Smart Solutions",
+    description:
+      "Discover CoreGrid’s expertise in smart building automation, IoT integration, and energy management solutions for sustainable and efficient environments.",
+    url: "https://www.rdtechgroup.com/companies/core-grid",
+    siteName: "RDTech Group",
+    images: [
+      {
+        url: "https://www.rdtechgroup.com/og-coregrid.jpg",
+        width: 1200,
+        height: 630,
+        alt: "CoreGrid Smart Building Solutions",
+      },
+    ],
+    type: "website",
+  },
+};
 
 export default function page() {
-  return <div>Core Grid</div>;
+  const services = [
+    "User Interface",
+    "Room Automation",
+    "Lightning Control",
+    "HAVC Control",
+    "I/O Controller",
+    "Energy Management Metering",
+    "Gateways",
+    "Network Infrastructure",
+  ];
+
+  return (
+    <main className="min-h-screen">
+      <HeroSection
+        companyName="CoreGrid"
+        slogan="Building Automation & Smart Solutions"
+        description="Transforming buildings into intelligent, efficient spaces through cutting-edge automation and control systems. Creating smarter environments for better living and working."
+        backgroundImage="/placeholder.png"
+        companyLogo={<CoreGridLogo />}
+        projectsLink="/companies/core-grid/#projects"
+        websiteLink="https://www.loytec.com"
+      />
+      <AboutSection
+        title="About CoreGrid"
+        description={[
+          "CoreGrid is the smart building and automation division of RDTech Group, specializing in intelligent building management systems, home automation, and energy optimization solutions.",
+          " We leverage IoT technology, AI-driven analytics, and advanced control systems to create environments that are not only smart but also sustainable, efficient, and user-friendly.",
+        ]}
+        stats={[
+          { value: "200+", label: "Smart Buildings" },
+          { value: "8+", label: "Years Innovation" },
+          { value: "30+", label: "Automation Experts" },
+        ]}
+        image={{
+          src: "",
+          alt: "CoreGrid Smart Building",
+        }}
+      />
+      <ServicesSection
+        title="Our Smart Solutions"
+        services={services}
+        image={{
+          src: "",
+          alt: "CoreGrid Services",
+        }}
+      />
+      <ContactSection
+        title="Make Your Building Smart"
+        subtitle="Ready to transform your space with intelligent automation? Let's create a smarter future together."
+        phone="+971 X XXX XXXX"
+        email="info@example.com"
+        address="Dubai, UAE"
+      />
+    </main>
+  );
 }
