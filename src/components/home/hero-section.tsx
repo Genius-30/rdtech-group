@@ -4,7 +4,6 @@ import { ArrowRight, Play } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
-import { NumberTicker } from "../magicui/number-ticker";
 
 export function HeroSection() {
   const images = [
@@ -25,7 +24,7 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden max-xs:pb-8 snap-start"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden snap-start"
       data-header-theme="light"
     >
       {/* Background Carousel */}
@@ -47,8 +46,8 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mt-20 xs:mt-16 sm:mt-14 mx-auto px-4 text-center text-white">
-        <div className="max-w-4xl mx-auto">
+      <div className="relative z-10 container mx-auto px-4 text-center text-white">
+        <div className="max-w-4xl mx-auto flex flex-col mt-18 sm:mt-10 items-center justify-center">
           <FadeIn delay={200}>
             <h1 className="font-mono text-5xl md:text-7xl font-bold mb-6 text-shadow-lg text-shadow-black/20">
               Leading Technology{" "}
@@ -87,7 +86,7 @@ export function HeroSection() {
           </FadeIn>
 
           {/* Stats */}
-          <FadeIn delay={800}>
+          {/* <FadeIn delay={800}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 pt-10 border-t border-white/20 text-shadow-lg text-shadow-black/30">
               <div className="text-center hover-lift">
                 <div className="text-3xl md:text-4xl font-bold text-accent mb-2">
@@ -116,18 +115,18 @@ export function HeroSection() {
                 <div className="text-sm text-gray-300">Customers Served</div>
               </div>
             </div>
-          </FadeIn>
+          </FadeIn> */}
         </div>
       </div>
 
       {/* Dash Navigation */}
-      <div className="absolute bottom-6 flex gap-2 z-20">
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 sm:left-20 flex gap-2 z-20">
         {images.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrent(idx)}
             className={`h-1 rounded-full transition-all duration-300 ${
-              current === idx ? "bg-white w-6" : "bg-white/50 w-3"
+              current === idx ? "bg-white w-6 sm:w-8" : "bg-white/50 w-3 sm:w-5"
             }`}
           />
         ))}
