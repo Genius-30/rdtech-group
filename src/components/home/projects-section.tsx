@@ -1,19 +1,13 @@
 "use client";
 
-import {
-  Award,
-  Building,
-  Calendar,
-  ChevronLeft,
-  ChevronRight,
-  MapPin,
-} from "lucide-react";
-import { Card } from "@/components/ui/card";
-import { FadeIn } from "@/components/ui/fade-in";
-import { SafeImage } from "../ui/safe-image";
-import { useState } from "react";
+import { Award, Building, Calendar, MapPin } from "lucide-react";
+import { useEffect, useState } from "react";
+
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
+import { Card } from "@/components/ui/card";
+import { SafeImage } from "../ui/safe-image";
+import SectionHeader from "./section-header";
 
 const flagshipProjects = [
   {
@@ -99,7 +93,7 @@ const flagshipProjects = [
       "High-quality dining facilities",
       "Structural construction",
       "Modern finishes",
-      "Durable and sustainable building solutions"
+      "Durable and sustainable building solutions",
     ],
   },
 ];
@@ -108,12 +102,15 @@ export default function ProjectsSection() {
   const [currentProject, setCurrentProject] = useState(0);
   const project = flagshipProjects[currentProject];
 
-  const nextProject = () =>
-    setCurrentProject((p) => (p + 1) % flagshipProjects.length);
-  const prevProject = () =>
-    setCurrentProject(
-      (p) => (p - 1 + flagshipProjects.length) % flagshipProjects.length
-    );
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentProject((prev) =>
+        prev === flagshipProjects.length - 1 ? 0 : prev + 1
+      );
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section
@@ -121,20 +118,12 @@ export default function ProjectsSection() {
       data-header-theme="dark"
     >
       <div className="max-w-7xl mx-auto">
-        {/* Heading */}
-        <div className="container mx-auto px-4 flex flex-col items-center">
-          <FadeIn>
-            <h2 className="w-auto text-xl md:text-2xl font-bold text-white bg-primary backdrop-blur-md py-2 px-4 rounded-full shadow-md">
-              Featured Projects
-            </h2>
-          </FadeIn>
-          <FadeIn delay={100}>
-            <p className="text-muted-foreground mt-1 max-w-2xl text-center">
-              Showcasing our expertise in delivering mission-critical technology
-              solutions across diverse industries
-            </p>
-          </FadeIn>
-        </div>
+        {/* Section Header */}
+        <SectionHeader
+          title="Our Projects"
+          subTitle="Showcasing our expertise in delivering mission-critical technology
+              solutions across diverse industries"
+        />
 
         {/* Project showcase */}
         <div className="container mx-auto px-4 mt-12">
@@ -159,7 +148,10 @@ export default function ProjectsSection() {
                       <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                         {project.title}
                       </h3>
-                      <Badge variant="outline" className="border-primary px-2 py-1 text-primary font-semibold">
+                      <Badge
+                        variant="outline"
+                        className="border-primary px-2 py-1 text-primary font-semibold"
+                      >
                         {project.category}
                       </Badge>
                     </div>
@@ -238,7 +230,10 @@ export default function ProjectsSection() {
                       ))}
                     </ul>
                   </div>
-                  <Button variant="default" className="absolute bottom-10 right-10 cursor-pointer">
+                  <Button
+                    variant="default"
+                    className="absolute bottom-10 right-10 cursor-pointer"
+                  >
                     View Project
                   </Button>
                 </div>
@@ -246,36 +241,19 @@ export default function ProjectsSection() {
             </div>
           </Card>
 
-          {/* Minimal navigation */}
-          <div className="flex items-center justify-center gap-4 mt-8">
-            <button
-              aria-label="Previous project"
-              onClick={prevProject}
-              className="p-2 rounded-full border border-gray-200 bg-white hover:bg-gray-100 transition"
-            >
-              <ChevronLeft className="h-4 w-4" />
-            </button>
-
-            <div className="flex gap-2">
-              {flagshipProjects.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrentProject(i)}
-                  aria-label={`Go to project ${i + 1}`}
-                  className={`h-2.5 w-2.5 rounded-full transition ${
-                    i === currentProject ? "bg-primary" : "bg-gray-300"
-                  }`}
-                />
-              ))}
-            </div>
-
-            <button
-              aria-label="Next project"
-              onClick={nextProject}
-              className="p-2 rounded-full border cursor-pointer border-gray-200 bg-white hover:bg-gray-100 transition"
-            >
-              <ChevronRight className="h-4 w-4" />
-            </button>
+          {/* Navigation */}
+          <div className="flex items-center justify-center gap-2 mt-8">
+            {flagshipProjects.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentProject(idx)}
+                className={`h-1 rounded-full transition-all duration-300 cursor-pointer ${
+                  currentProject === idx
+                    ? "bg-primary w-6 sm:w-8"
+                    : "bg-primary/30 w-3 sm:w-5"
+                }`}
+              />
+            ))}
           </div>
         </div>
       </div>

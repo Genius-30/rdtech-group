@@ -1,4 +1,5 @@
 import AboutSection from "@/components/companies/about-section";
+import ClientsSection from "@/components/companies/clients-section";
 import ContactSection from "@/components/companies/contact-section";
 import CoreGridLogo from "@/components/logos/core-grid-logo";
 import HeroSection from "@/components/companies/hero-section";
@@ -50,6 +51,7 @@ export default function page() {
         projectsLink="/companies/core-grid/#projects"
         websiteLink="https://www.loytec.com"
       />
+
       <AboutSection
         title="About CoreGrid Solutions"
         description={[
@@ -66,6 +68,7 @@ export default function page() {
           alt: "CoreGrid Smart Building",
         }}
       />
+
       <ServicesSection
         title="Our Smart Solutions"
         services={services}
@@ -74,6 +77,32 @@ export default function page() {
           alt: "CoreGrid Services",
         }}
       />
+
+      <ClientsSection
+        title="Empowering Smart Partnerships"
+        subTitle="Trusted by forward-thinking organizations to build intelligent, efficient, and sustainable spaces."
+        rows={[
+          {
+            baseVelocity: 5,
+            direction: 1,
+            logos: [
+              { name: "Client A", src: "/logos/client-a.png" },
+              { name: "Client B", src: "/logos/client-b.png" },
+              { name: "Client C", src: "/logos/client-c.png" },
+            ],
+          },
+          {
+            baseVelocity: 5,
+            direction: -1,
+            logos: [
+              { name: "Client D", src: "/logos/client-d.png" },
+              { name: "Client E", src: "/logos/client-e.png" },
+              { name: "Client F", src: "/logos/client-f.png" },
+            ],
+          },
+        ]}
+      />
+
       <ContactSection
         title="Make Your Building Smart"
         subtitle="Ready to transform your space with intelligent automation? Let's create a smarter future together."

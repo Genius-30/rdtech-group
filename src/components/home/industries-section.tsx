@@ -13,6 +13,7 @@ import { Button } from "../ui/button";
 import { FadeIn } from "../ui/fade-in";
 import Link from "next/link";
 import { SafeImage } from "../ui/safe-image";
+import SectionHeader from "./section-header";
 
 const industries = [
   {
@@ -71,19 +72,11 @@ export function IndustriesSection() {
     <section className="py-24 pb-0 bg-white ">
       <div className="container mx-auto px-4 max-w-7xl ">
         {/* Section Header */}
-        <div className="container mx-auto px-4 flex flex-col items-center text-center">
-          <FadeIn>
-            <h2 className="text-xl md:text-2xl font-bold text-white bg-primary backdrop-blur-md py-2 px-6 rounded-full shadow-lg">
-              Industries We Serve
-            </h2>
-          </FadeIn>
-          <FadeIn delay={100}>
-            <p className="text-muted-foreground mt-3 max-w-2xl">
-              Delivering specialized solutions across diverse sectors, from
-              critical infrastructure to commercial spaces.
-            </p>
-          </FadeIn>
-        </div>
+        <SectionHeader
+          title="Industries We Serve"
+          subTitle=" Delivering specialized solutions across diverse sectors, from
+              critical infrastructure to commercial spaces."
+        />
 
         {/* Industries Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
@@ -122,26 +115,26 @@ export function IndustriesSection() {
         </div>
       </div>
 
-       {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="bg-primary/10 rounded-2xl p-8 md:p-12">
-            <h3 className="font-heading text-3xl font-bold text-gray-900 mb-4">
-              Don&#39;t See Our Industry?
-            </h3>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              We work across many sectors and are always ready to tackle new
-              challenges. Contact us to discuss your specific requirements.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild variant="default">
-                <Link href="/#contact">Contact Our Team</Link>
-              </Button>
-              <Button asChild variant="outline" className="hover:bg-white/10">
-                <Link href="/projects">View All Projects</Link>
-              </Button>
-            </div>
+      {/* Call to Action */}
+      <div className="text-center mt-16">
+        <div className="bg-primary/10 p-8 md:p-12">
+          <h3 className="font-heading text-3xl font-bold text-gray-900 mb-4">
+            Don&#39;t See Your Industry?
+          </h3>
+          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            We work across many sectors and are always ready to tackle new
+            challenges. Contact us to discuss your specific requirements.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild variant="default">
+              <Link href="/#contact">Contact Our Team</Link>
+            </Button>
+            <Button asChild variant="outline" className="hover:bg-white/5">
+              <Link href="/projects">View All Projects</Link>
+            </Button>
           </div>
         </div>
+      </div>
     </section>
   );
 }

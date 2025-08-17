@@ -60,22 +60,34 @@ export function Header() {
   const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY < window.innerHeight) {
-        setTheme("light"); // Top of screen → white
-      } else {
-        setTheme("dark"); // After h-screen → black
-      }
-    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const newTheme = entry.target.getAttribute("data-header-theme") as
+              | "light"
+              | "dark";
+            if (newTheme) {
+              setTheme(newTheme);
+            }
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    document
+      .querySelectorAll("[data-header-theme]")
+      .forEach((el) => observer.observe(el));
+
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   return (
     <header
-      className={`fixed top-0 z-[99] w-full  ${
+      className={`fixed top-0 z-[99] w-full ${
         theme === "light" ? "text-white" : "text-black"
       } ${showOverview && "text-white"}`}
     >
@@ -165,7 +177,11 @@ export function Header() {
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Menu className="h-6 w-6 text-black" />
+                <Menu
+                  className={`h-6 w-6 ${
+                    theme == "dark" ? "text-black" : "text-white"
+                  }`}
+                />
               </SheetTrigger>
               <SheetContent side="right" className="p-4 gap-3 z-[100]">
                 {/* Logo */}

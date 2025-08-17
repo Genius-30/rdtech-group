@@ -8,6 +8,7 @@ import { FadeIn } from "@/components/ui/fade-in";
 import Link from "next/link";
 import RDTechLogo from "@/components/logos/rdtech-logo";
 import { SafeImage } from "../ui/safe-image";
+import SectionHeader from "./section-header";
 
 export default function CompaniesSection() {
   const companies = [
@@ -71,20 +72,10 @@ export default function CompaniesSection() {
     >
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
-        <div className="container mx-auto px-4 flex flex-col items-center text-center">
-          <FadeIn>
-            <h2 className="text-xl md:text-2xl font-bold text-white bg-primary backdrop-blur-md py-2 px-6 rounded-full shadow-lg">
-              Our Companies
-            </h2>
-          </FadeIn>
-          <FadeIn delay={100}>
-            <p className="text-muted-foreground mt-3 max-w-2xl">
-              Three specialized companies working together to deliver
-              comprehensive solutions across security, construction, and
-              automation sectors.
-            </p>
-          </FadeIn>
-        </div>
+        <SectionHeader
+          title="Our Companies"
+          subTitle="Three specialized companies working together to deliver comprehensive solutions across security, construction, and automation sectors."
+        />
 
         {/* Cards */}
         <div className="relative container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">

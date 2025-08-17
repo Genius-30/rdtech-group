@@ -1,29 +1,31 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { projects } from '../../../public/projectData'
-import { SafeImage } from "../ui/safe-image"
-import Image from "next/image"
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
+import Link from "next/link";
+import { projects } from "../../../public/projectData";
+import { useState } from "react";
 
-const categories = ["All",  "Al Ausus", "RDTech", "CoreGrid"]
+const categories = ["All", "Al Ausus", "RDTech", "CoreGrid"];
 
 export default function ProjectsGrid() {
-  const [activeCategory, setActiveCategory] = useState("All")
+  const [activeCategory, setActiveCategory] = useState("All");
 
   const filteredProjects =
-    activeCategory === "All" ? projects : projects.filter((project) => project.category === activeCategory)
+    activeCategory === "All"
+      ? projects
+      : projects.filter((project) => project.category === activeCategory);
 
   return (
     <section className="py-20 pt-12 px-6 bg-muted/30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-2">Our Projects</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-2">
+            Our Projects
+          </h2>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto leading-relaxed">
-            Discover our portfolio of exceptional construction projects, each showcasing our commitment to quality and
-            innovation.
+            Discover our portfolio of exceptional construction projects, each
+            showcasing our commitment to quality and innovation.
           </p>
         </div>
 
@@ -45,7 +47,11 @@ export default function ProjectsGrid() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {filteredProjects.map((project) => (
-            <Link key={project.id} href={`/projects/${project.slug}`} className="h-full">
+            <Link
+              key={project.id}
+              href={`/projects/${project.slug}`}
+              className="h-full"
+            >
               <Card className="group hover:shadow-xl hover:scale-105 duration-500 py-0 flex flex-col h-full">
                 <div className="relative rounded-t-xl overflow-hidden">
                   <img
@@ -59,7 +65,9 @@ export default function ProjectsGrid() {
                       {project.title.split(" – ")[0]}
                     </h3>
                     <div className="flex text-shadow-2xs text-shadow-black justify-between items-center">
-                      <p className="text-white/80 text-sm">{project.location}</p>
+                      <p className="text-white/80 text-sm">
+                        {project.location}
+                      </p>
                       <Badge
                         variant="custom"
                         className="-mb-2 text-shadow-2xs text-shadow-black"
@@ -72,11 +80,17 @@ export default function ProjectsGrid() {
                 <div className="p-6 pt-0 flex-1 flex flex-col justify-between">
                   <div>
                     <h3 className="font-bold text-xl mb-2">{project.title}</h3>
-                    <p className="text-muted-foreground mb-4">{project.description}</p>
+                    <p className="text-muted-foreground mb-4">
+                      {project.description}
+                    </p>
                   </div>
                   <div className="flex justify-between items-center mt-auto">
-                    <span className="text-sm text-muted-foreground">{project.location}</span>
-                    <span className="text-sm font-medium text-muted-foreground">{project.year}</span>
+                    <span className="text-sm text-muted-foreground">
+                      {project.location}
+                    </span>
+                    <span className="text-sm font-medium text-muted-foreground">
+                      {project.year}
+                    </span>
                   </div>
                 </div>
               </Card>
@@ -85,5 +99,5 @@ export default function ProjectsGrid() {
         </div>
       </div>
     </section>
-  )
+  );
 }

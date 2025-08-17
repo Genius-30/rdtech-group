@@ -1,4 +1,5 @@
 import AboutSection from "@/components/companies/about-section";
+import ClientsSection from "@/components/companies/clients-section";
 import ContactSection from "@/components/companies/contact-section";
 import HeroSection from "@/components/companies/hero-section";
 import { Metadata } from "next";
@@ -48,6 +49,7 @@ export default function page() {
         projectsLink="/companies/rdtech-fze/#projects"
         websiteLink="https://www.site-technology.com"
       />
+
       <AboutSection
         title="About RDTech FZE"
         description={[
@@ -64,6 +66,7 @@ export default function page() {
           alt: "RDTech FZE Team",
         }}
       />
+
       <ServicesSection
         title="Our Security Solutions"
         services={services}
@@ -72,6 +75,32 @@ export default function page() {
           alt: "RDTech FZE Services",
         }}
       />
+
+      <ClientsSection
+        title="Trusted By Industry Leaders"
+        subTitle="Partnering with organizations across the UAE to deliver secure and innovative technology solutions."
+        rows={[
+          {
+            baseVelocity: 5,
+            direction: 1,
+            logos: [
+              { name: "Client A", src: "" },
+              { name: "Client B", src: "" },
+              { name: "Client C", src: "" },
+            ],
+          },
+          {
+            baseVelocity: 5,
+            direction: -1,
+            logos: [
+              { name: "Client D", src: "" },
+              { name: "Client E", src: "" },
+              { name: "Client F", src: "" },
+            ],
+          },
+        ]}
+      />
+
       <ContactSection
         title="Secure Your Future Today"
         subtitle="Ready to implement world-class security solutions? Our experts are here to help."

@@ -1,5 +1,6 @@
 import { FadeIn } from "@/components/ui/fade-in";
 import { NumberTicker } from "../magicui/number-ticker";
+import SectionHeader from "./section-header";
 import WorldMap from "../ui/world-map";
 
 export default function GlobalCountriesSection() {
@@ -80,19 +81,11 @@ export default function GlobalCountriesSection() {
       data-header-theme="dark"
     >
       {/* Heading */}
-      <div className="container mx-auto px-4  flex flex-col items-center">
-        <FadeIn>
-          <h2 className="w-auto text-xl md:text-2xl font-bold text-white bg-primary backdrop-blur-md py-2 px-4 rounded-full shadow-md">
-            Global Presence
-          </h2>
-        </FadeIn>
-        <FadeIn delay={100}>
-          <p className="text-muted-foreground mt-2 text-center max-w-2xl">
-            Serving clients across the Middle East and around the world with
-            innovative, mission-critical technology solutions.
-          </p>
-        </FadeIn>
-      </div>
+      <SectionHeader
+        title="Global Reach"
+        subTitle="Serving clients across the Middle East and around the world with
+            innovative, mission-critical technology solutions."
+      />
 
       {/* World Map */}
       <div className="container mx-auto px-4 mt-12 relative">

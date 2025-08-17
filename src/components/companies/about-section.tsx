@@ -29,7 +29,7 @@ export default function AboutSection({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="order-2 lg:order-1">
-            <h2 className="font-heading text-4xl font-bold text-primary mb-6">
+            <h2 className="font-heading text-4xl font-bold text-gray-900 mb-6">
               {title}
             </h2>
 
@@ -37,7 +37,7 @@ export default function AboutSection({
             {description.map((para, idx) => (
               <p
                 key={idx}
-                className="text-lg text-muted-foreground leading-relaxed mb-6 last:mb-8"
+                className="text-lg text-gray-600 leading-relaxed mb-6 last:mb-8"
               >
                 {para}
               </p>
@@ -47,7 +47,7 @@ export default function AboutSection({
             <div className="grid grid-cols-3 gap-6">
               {stats.map((stat, idx) => (
                 <div key={idx} className="text-start">
-                  <div className="font-heading text-3xl font-bold text-primary">
+                  <div className="font-heading text-3xl font-bold text-accent">
                     {stat.value}
                   </div>
                   <div className="text-sm text-muted-foreground">
