@@ -1,22 +1,22 @@
 export interface Project {
-  id: string
-  slug: string
-  title: string
-  description: string
-  fullDescription: string
-  category: "RDTech" | "CoreGrid" | "Al Ausus"
-  location: string
-  year: string
-  thumbnail: string
-  heroImage: string
-  gallery: string[]
-  duration: string
-  size: string
-  client: string
-  budget: string
-  services: string[]
-  features: string[]
-  challenges: string
+  id: string;
+  slug: string;
+  title: string;
+  description: string;
+  fullDescription: string;
+  category: "RDTech" | "CoreGrid" | "Al Ausus";
+  location: string;
+  year: string;
+  thumbnail: string;
+  heroImage: string;
+  gallery: string[];
+  duration: string;
+  size: string;
+  client: string;
+  budget: string;
+  services: string[];
+  features: string[];
+  challenges: string;
 }
 
 export const projects: Project[] = [
@@ -104,7 +104,7 @@ export const projects: Project[] = [
     gallery: [
       "/projects/rdtech/burjG1.webp",
       "/projects/rdtech/burjG2.webp",
-      "/projects/rdtech/burjG3.jpg"
+      "/projects/rdtech/burjG3.jpg",
     ],
     duration: "24 months",
     size: "828 m tower – mixed-use facility",
@@ -114,16 +114,16 @@ export const projects: Project[] = [
       "CCTV Systems",
       "Access Control",
       "Centralized Monitoring",
-      "Intrusion Detection"
+      "Intrusion Detection",
     ],
     features: [
       "Advanced surveillance coverage",
       "Centralized security command center",
       "Biometric access control",
-      "Redundant system design"
+      "Redundant system design",
     ],
     challenges:
-      "Due to the size and global prominence of the project, RDTech had to ensure zero downtime and seamless integration of multiple systems with ongoing daily operations."
+      "Due to the size and global prominence of the project, RDTech had to ensure zero downtime and seamless integration of multiple systems with ongoing daily operations.",
   },
   // CoreGrid
   {
@@ -174,7 +174,7 @@ export const projects: Project[] = [
     gallery: [
       "/projects/coregrid/lusailG1.webp",
       "/projects/coregrid/lusailG2.jpg",
-      "/projects/coregrid/lusailG3.webp"
+      "/projects/coregrid/lusailG3.webp",
     ],
     duration: "20 months",
     size: "45,000 sq m",
@@ -184,17 +184,17 @@ export const projects: Project[] = [
       "Building Management System",
       "HVAC Automation",
       "Energy Optimization",
-      "Lighting Control"
+      "Lighting Control",
     ],
     features: [
       "Centralized HVAC monitoring",
       "Intelligent lighting automation",
       "Energy-efficient operation",
       "Integrated smart building interface",
-      "Scalable and future-ready system"
+      "Scalable and future-ready system",
     ],
     challenges:
-      "The sensitive nature of the project demanded enhanced cybersecurity and system redundancy. CoreGrid engineered a fully redundant BMS architecture with secure communication layers."
+      "The sensitive nature of the project demanded enhanced cybersecurity and system redundancy. CoreGrid engineered a fully redundant BMS architecture with secure communication layers.",
   },
   {
     id: "6",
@@ -212,7 +212,7 @@ export const projects: Project[] = [
     gallery: [
       "/projects/coregrid/kingG1.webp",
       "/projects/coregrid/kingG2.webp",
-      "/projects/coregrid/kingG3.webp"
+      "/projects/coregrid/kingG3.webp",
     ],
     duration: "26 months",
     size: "250 m tower – mixed-use",
@@ -222,23 +222,24 @@ export const projects: Project[] = [
       "Building Management System",
       "Energy Optimization",
       "HVAC Control",
-      "Smart Lighting"
+      "Smart Lighting",
     ],
     features: [
       "Full integration of HVAC, lighting, and shading",
       "Real-time energy monitoring",
       "Centralized command and control",
-      "Scalable automation for future expansion"
+      "Scalable automation for future expansion",
     ],
     challenges:
-      "The project required delivering a BMS of global standards for a supertall structure, ensuring redundancy, cybersecurity, and integration with international smart city frameworks."
+      "The project required delivering a BMS of global standards for a supertall structure, ensuring redundancy, cybersecurity, and integration with international smart city frameworks.",
   },
   // Al Ausus
   {
     id: "7",
     slug: "emirates-post-office-construction",
     title: "Emirates Post Office Construction",
-    description: "Civil works and building construction for Emirates Post Office facilities.",
+    description:
+      "Civil works and building construction for Emirates Post Office facilities.",
     fullDescription:
       "Al Ausus executed the full civil works and building construction of the Emirates Post Office complex, covering architectural design, MEP coordination, and structural delivery. The project enhanced postal service infrastructure with modern and durable facilities.",
     category: "Al Ausus",
@@ -249,7 +250,7 @@ export const projects: Project[] = [
     gallery: [
       "/projects/alAusus/emiratesG1.webp",
       "/projects/alAusus/emiratesG2.webp",
-      "/projects/alAusus/emiratesG3.webp"
+      "/projects/alAusus/emiratesG3.webp",
     ],
     duration: "16 months",
     size: "12,000 sq m",
@@ -259,16 +260,17 @@ export const projects: Project[] = [
     features: [
       "Modern postal facilities",
       "High-quality building construction",
-      "Integrated MEP systems"
+      "Integrated MEP systems",
     ],
     challenges:
-      "The challenge was constructing across multiple sites simultaneously, which required strict scheduling and logistics management."
+      "The challenge was constructing across multiple sites simultaneously, which required strict scheduling and logistics management.",
   },
   {
     id: "8",
     slug: "al-ain-club-restaurants",
     title: "Al Ain Club – Restaurants",
-    description: "Construction of modern restaurants within the Al Ain sports club facilities.",
+    description:
+      "Construction of modern restaurants within the Al Ain sports club facilities.",
     fullDescription:
       "Al Ausus carried out full civil works for the restaurant complexes inside Al Ain Club, providing durable infrastructure and quality finishes suited for high footfall hospitality spaces.",
     category: "Al Ausus",
@@ -279,7 +281,7 @@ export const projects: Project[] = [
     gallery: [
       "/projects/alAusus/alAinG1.webp",
       "/projects/alAusus/alAinG2.webp",
-      "/projects/alAusus/alAinG3.webp"
+      "/projects/alAusus/alAinG3.webp",
     ],
     duration: "10 months",
     size: "3,500 sq m",
@@ -289,10 +291,10 @@ export const projects: Project[] = [
     features: [
       "High-quality dining facilities",
       "Structural construction",
-      "Modern finishes"
+      "Modern finishes",
     ],
     challenges:
-      "Strict deadlines were imposed to complete the project before a sports season opening event, requiring efficient resource allocation."
+      "Strict deadlines were imposed to complete the project before a sports season opening event, requiring efficient resource allocation.",
   },
   {
     id: "9",
@@ -310,7 +312,7 @@ export const projects: Project[] = [
     gallery: [
       "/projects/alAusus/culturalG1.webp",
       "/projects/alAusus/culturalG2.webp",
-      "/projects/alAusus/culturalG3.webp"
+      "/projects/alAusus/culturalG3.webp",
     ],
     duration: "14 months",
     size: "8,000 sq m",
@@ -320,9 +322,9 @@ export const projects: Project[] = [
     features: [
       "Modern cultural and community facilities",
       "Integrated HVAC and electrical systems",
-      "Durable construction for high footfall"
+      "Durable construction for high footfall",
     ],
     challenges:
-      "The project required careful alignment with cultural guidelines and delivering within tight deadlines to coincide with public events."
-  }
-]
+      "The project required careful alignment with cultural guidelines and delivering within tight deadlines to coincide with public events.",
+  },
+];

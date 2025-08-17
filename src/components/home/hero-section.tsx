@@ -1,10 +1,11 @@
 "use client";
 
-import { ArrowRight, Play } from "lucide-react";
 import { useEffect, useState } from "react";
+
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
 import Link from "next/link";
+import { Play } from "lucide-react";
 
 export default function HeroSection() {
   const images = [
@@ -25,17 +26,24 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className={`relative min-h-screen flex items-center justify-center overflow-hidden bg-fixed bg-cover ${
+        current === 2 ? "bg-bottom" : "bg-top"
+      }`}
       data-header-theme="light"
+      style={{
+        backgroundImage: `url('${images[current]}')`,
+      }}
     >
+      <div className="absolute inset-0 bg-black/50" />
+
       {/* Background Carousel */}
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         {images.map((img, index) => (
           <div
             key={index}
             className={`absolute inset-0 bg-cover bg-no-repeat transition-opacity duration-1000 ${
               index === current ? "opacity-100" : "opacity-0"
-            } ${ index === 2 ? "bg-bottom": "bg-top"}
+            } ${index === 2 ? "bg-bottom" : "bg-top"}
             `}
             style={{
               backgroundImage: `url('${img}')`,
@@ -44,7 +52,7 @@ export default function HeroSection() {
             <div className="absolute inset-0 bg-black/45" />
           </div>
         ))}
-      </div>
+      </div> */}
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
@@ -68,12 +76,15 @@ export default function HeroSection() {
           <FadeIn delay={600}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
               <Button
+                asChild
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-accent hover:text-white hover:border-transparent px-8 py-4 text-lg bg-transparent hover-lift cursor-pointer shadow-lg shadow-black/15"
+                className="border-white text-white hover:bg-primary hover:text-white hover:border-transparent px-8 py-4 text-lg bg-transparent hover-lift cursor-pointer shadow-lg shadow-black/15 flex items-center"
               >
-                <p className="-mt-[5px]">Explore Our Services</p>
-                <Play className="mr-2 h-5 w-5" />
+                <Link className="flex items-center gap-2" href="/#services">
+                  <span>Explore Our Services</span>
+                  <Play className="h-5 w-5" />
+                </Link>
               </Button>
             </div>
           </FadeIn>

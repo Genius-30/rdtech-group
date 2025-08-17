@@ -1,10 +1,12 @@
 "use client";
 
 import { Mail, MapPin, Phone } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "../ui/fade-in";
 import { Input } from "@/components/ui/input";
 import type React from "react";
+import SectionHeader from "./section-header";
 import { Textarea } from "@/components/ui/textarea";
 
 export default function ContactSection() {
@@ -35,29 +37,22 @@ export default function ContactSection() {
       className="min-h-screen flex flex-col items-center py-20 bg-gray-100"
       data-header-theme="dark"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="w-full max-w-7xl mx-auto">
         {/* Heading */}
-        <div className=" mx-auto px-4 flex flex-col items-center text-center">
-          <FadeIn>
-            <h2 className="w-auto text-xl md:text-2xl font-bold text-white bg-primary backdrop-blur-md py-2 px-6 rounded-full shadow-lg">
-              Get in Touch
-            </h2>
-          </FadeIn>
-          <FadeIn delay={100}>
-            <p className="text-muted-foreground mt-2 max-w-2xl">
-              Ready to transform your business with cutting-edge technology
-              solutions?<br/> We’re here to help.
-            </p>
-          </FadeIn>
-        </div>
+        <SectionHeader
+          title="Get in Touch"
+          subTitle="Ready to transform your business with cutting-edge technology
+              solutions?
+              <br /> We’re here to help."
+        />
 
         {/* Layout */}
-        <div className=" mx-auto px-4 mt-12 grid lg:grid-cols-2 gap-8 items-start">
+        <div className="px-4 mt-12 w-full grid lg:grid-cols-2 gap-8 items-start">
           {/* Contact Form */}
           <FadeIn direction="left" className="h-full">
             <form
               onSubmit={handleSubmit}
-              className="p-8 rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm shadow-lg space-y-6 h-full"
+              className="p-8 rounded-xl border border-gray-200 bg-white/80 backdrop-blur-sm shadow-md space-y-6 h-full"
             >
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
@@ -129,7 +124,7 @@ export default function ContactSection() {
           <FadeIn direction="right">
             <div className="space-y-6">
               {/* Info Card */}
-              <div className="p-6 rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm shadow-lg space-y-4">
+              <div className="p-6 rounded-xl border border-gray-200 bg-white/80 backdrop-blur-sm shadow-md space-y-4">
                 <div className="flex items-center gap-3 text-slate-800">
                   <Mail className="h-5 w-5 text-primary" />
                   <a
@@ -159,7 +154,7 @@ export default function ContactSection() {
               </div>
 
               {/* Map */}
-              <div className="rounded-3xl overflow-hidden border border-gray-200 shadow-lg">
+              <div className="rounded-xl overflow-hidden border border-gray-200 shadow-md">
                 <iframe
                   title="RDTech Group Office Map"
                   src="https://www.google.com/maps?q=AFZ%20Office%201038,%20Ajman%20Free%20Zone,%20UAE&output=embed"

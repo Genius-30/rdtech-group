@@ -2,6 +2,7 @@ import { Building, Camera, Network, Server, Shield, Wifi } from "lucide-react";
 
 import { FadeIn } from "@/components/ui/fade-in";
 import { SafeImage } from "../ui/safe-image";
+import SectionHeader from "./section-header";
 
 export default function ServicesSection() {
   const services = [
@@ -68,21 +69,13 @@ export default function ServicesSection() {
       data-header-theme="dark"
     >
       {/* Heading row */}
-      <div className="container mx-auto px-4 flex flex-col items-center">
-        <FadeIn>
-          <h2 className="w-auto text-xl md:text-2xl font-bold text-white bg-primary backdrop-blur-md py-2 px-4 rounded-full shadow-md">
-            Our Solutions
-          </h2>
-        </FadeIn>
-        <FadeIn delay={100}>
-          <p className="text-muted-foreground max-w-xl text-center mt-1">
-            Comprehensive technology solutions tailored to empower and transform modern enterprises
-          </p>
-        </FadeIn>
-      </div>
+      <SectionHeader
+        title="Our Solutions"
+        subTitle="Comprehensive technology solutions tailored to empower and transform modern enterprises"
+      />
 
       {/* Services Grid */}
-      <div className="relative container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+      <div className="relative container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
         {services.map((service, index) => (
           <FadeIn key={index} delay={index * 100}>
             <div className="relative w-full h-72 overflow-hidden group cursor-pointer rounded-4xl shadow-lg">

@@ -26,20 +26,12 @@ export default function HeroSection({
 }: Readonly<HeroSectionProps>) {
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden py-12"
+      className="relative min-h-screen flex items-center bg-fixed bg-cover justify-center overflow-hidden py-12"
       data-header-theme="light"
+      style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000"
-          style={{
-            backgroundImage: `url('${backgroundImage}')`,
-          }}
-        >
-          <div className="absolute inset-0 bg-black/45" />
-        </div>
-      </div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white">

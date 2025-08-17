@@ -16,27 +16,43 @@ export default function ContactSection({
   address,
 }: Readonly<ContactSectionProps>) {
   return (
-    <section className="py-10 max-md:px-4 text-white">
-      <div className="container mx-auto px-4 bg-primary rounded-xl py-8">
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="font-heading text-4xl font-bold mb-2">{title}</h2>
-          <p className="text-xl text-muted leading-relaxed mb-8">{subtitle}</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <Phone className="h-8 w-8 mx-auto mb-4 text-muted" />
-              <div className="font-semibold">Call Us</div>
-              <div className="text-muted">{phone}</div>
-            </div>
-            <div className="text-center">
-              <Mail className="h-8 w-8 mx-auto mb-4 text-muted" />
-              <div className="font-semibold">Email Us</div>
-              <div className="text-muted">{email}</div>
-            </div>
-            <div className="text-center">
-              <MapPin className="h-8 w-8 mx-auto mb-4 text-muted" />
-              <div className="font-semibold">Visit Us</div>
-              <div className="text-muted">{address}</div>
-            </div>
+    <section className="py-16 max-md:px-6 bg-gray-100">
+      <div className="container mx-auto px-4">
+        {/* Heading */}
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <h2 className="font-heading text-4xl font-bold mb-3 text-gray-900">
+            {title}
+          </h2>
+          <p className="text-lg leading-relaxed text-gray-600">{subtitle}</p>
+        </div>
+
+        {/* Contact Info Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto">
+          {/* Phone */}
+          <div className="text-center">
+            <Phone className="h-10 w-10 mx-auto mb-4 text-accent" />
+            <h3 className="font-semibold text-lg mb-1 text-gray-800">
+              Call Us
+            </h3>
+            <p className="text-gray-600">{phone}</p>
+          </div>
+
+          {/* Email */}
+          <div className="text-center">
+            <Mail className="h-10 w-10 mx-auto mb-4 text-accent" />
+            <h3 className="font-semibold text-lg mb-1 text-gray-800">
+              Email Us
+            </h3>
+            <p className="text-gray-600">{email}</p>
+          </div>
+
+          {/* Address */}
+          <div className="text-center">
+            <MapPin className="h-10 w-10 mx-auto mb-4 text-accent" />
+            <h3 className="font-semibold text-lg mb-1 text-gray-800">
+              Visit Us
+            </h3>
+            <p className="text-gray-600">{address}</p>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import AAContractingLogo from "@/components/logos/aa-contracting-logo";
 import AboutSection from "@/components/companies/about-section";
+import ClientsSection from "@/components/companies/clients-section";
 import ContactSection from "@/components/companies/contact-section";
 import HeroSection from "@/components/companies/hero-section";
 import { Metadata } from "next";
@@ -55,6 +56,7 @@ export default function page() {
         projectsLink="/companies/aa-contracting/#projects"
         websiteLink=""
       />
+
       <AboutSection
         title="About AA Contracting"
         description={[
@@ -71,11 +73,38 @@ export default function page() {
           alt: "AA Contracting Team",
         }}
       />
+
       <ServicesSection
         title="Our Construction Services"
         services={services}
         image={{ src: "", alt: "AA Contracting Services" }}
       />
+
+      <ClientsSection
+        title="Building Trust With Every Project"
+        subTitle="Partnering with developers, government agencies, and enterprises across the UAE to deliver world-class infrastructure and construction solutions."
+        rows={[
+          {
+            baseVelocity: 5,
+            direction: 1,
+            logos: [
+              { name: "Client A", src: "/logos/client-a.png" },
+              { name: "Client B", src: "/logos/client-b.png" },
+              { name: "Client C", src: "/logos/client-c.png" },
+            ],
+          },
+          {
+            baseVelocity: 5,
+            direction: -1,
+            logos: [
+              { name: "Client D", src: "/logos/client-d.png" },
+              { name: "Client E", src: "/logos/client-e.png" },
+              { name: "Client F", src: "/logos/client-f.png" },
+            ],
+          },
+        ]}
+      />
+
       <ContactSection
         title="Build Your Vision With Us"
         subtitle=" Ready to start your construction project? Let's discuss how we can bring your vision to life."
