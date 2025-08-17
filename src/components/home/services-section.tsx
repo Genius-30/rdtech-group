@@ -1,65 +1,59 @@
-import { Building, Camera, Network, Server, Shield, Wifi } from "lucide-react";
+import { Building, Hammer, Factory, Network, Server, Shield } from "lucide-react";
 
 import { FadeIn } from "@/components/ui/fade-in";
 import { SafeImage } from "../ui/safe-image";
 
 export default function ServicesSection() {
   const services = [
-    {
-      icon: Shield,
-      title: "Security & RMS",
-      description:
-        "Comprehensive security solutions including CCTV, access control, and threat detection systems.",
-      video:
-        "https://videos.pexels.com/video-files/7710243/7710243-uhd_2560_1440_30fps.mp4",
-      thumbnail: "/general/rdtech/cctv.png",
-    },
-    {
-      icon: Network,
-      title: "Network & Communication",
-      description:
-        "End-to-end structured cabling, converged data & voice solutions with redundant failover technology.",
-      video:
-        "https://videos.pexels.com/video-files/18069803/18069803-uhd_1440_2560_24fps.mp4",
-      thumbnail: "/general/rdtech/cctv.webp",
-    },
-    {
-      icon: Building,
-      title: "Building Automation",
-      description:
-        "Intelligent networked control products for smart building management and automation.",
-      video:
-        "https://videos.pexels.com/video-files/18069166/18069166-uhd_2560_1440_24fps.mp4",
-      thumbnail: "/general/rdtech/cctv.webp",
-    },
-    {
-      icon: Server,
-      title: "Enterprise Computing",
-      description:
-        "Complete range of enterprise servers, storage solutions, and disaster recovery systems.",
-      video:
-        "https://videos.pexels.com/video-files/18069701/18069701-uhd_2560_1440_24fps.mp4",
-      thumbnail: "/general/rdtech/cctv.webp",
-    },
-    {
-      icon: Wifi,
-      title: "Mobility Infrastructure",
-      description:
-        "Corporate wireless coverage with support for multiple mobility applications and location tracking.",
-      video:
-        "https://videos.pexels.com/video-files/18069232/18069232-uhd_2560_1440_24fps.mp4",
-      thumbnail: "/general/rdtech/cctv.webp",
-    },
-    {
-      icon: Camera,
-      title: "Audio Visual Solutions",
-      description:
-        "Professional AV systems, background music, and large format display solutions.",
-      video:
-        "https://videos.pexels.com/video-files/18069232/18069232-uhd_2560_1440_24fps.mp4",
-      thumbnail: "/general/rdtech/cctv.webp",
-    },
-  ];
+  // RDTech
+  {
+    icon: Shield,
+    title: "Security & Surveillance",
+    description:
+      "CCTV, facial recognition, access control, and AI-powered surveillance for mission-critical security.",
+    thumbnail: "/general/rdtech/cctv.png",
+  },
+  {
+    icon: Network,
+    title: "Network & Communication",
+    description:
+      "End-to-end structured cabling, converged voice & data, and 24/7 enterprise-grade network solutions.",
+    thumbnail: "/general/rdtech/fiber.webp"
+  },
+
+  // Al Ausus
+  {
+    icon: Hammer,
+    title: "General Contracting",
+    description:
+      "Multi-disciplinary contracting services across civil, MEP, and infrastructure projects.",
+    thumbnail: "/general/aa/plan_3.webp",
+  },
+  {
+    icon: Factory,
+    title: "Infrastructure Development",
+    description:
+      "End-to-end project delivery including design, fit-out, and large-scale construction works.",
+    thumbnail: "/general/aa/worker.webp",
+  },
+
+  // CoreGrid
+  {
+    icon: Building,
+    title: "Building Automation",
+    description:
+      "Smart control systems for real estate and infrastructure with secure remote access and data visualization.",
+    thumbnail: "/general/coregrid/realState_2.webp",
+  },
+  {
+    icon: Server,
+    title: "Data & Control Solutions",
+    description:
+      "Intelligent integration for monitoring, storage, and automated facility management.",
+    thumbnail: "/general/rdtech/dataCenter_2.webp",
+  },
+];
+
 
   return (
     <section
@@ -95,9 +89,9 @@ export default function ServicesSection() {
               />
 
               {/* Overlay with icon & text */}
-              <div className="absolute inset-0 bg-black/40 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center text-white p-6">
+              <div className="absolute inset-0 text-shadow-2xs text-shadow-black bg-black/40 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center text-white p-6">
                 <service.icon className="w-10 h-10 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                <h3 className="text-xl  font-semibold mb-2">{service.title}</h3>
                 <p className="text-sm text-center">{service.description}</p>
               </div>
             </div>

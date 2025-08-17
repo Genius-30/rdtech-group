@@ -9,7 +9,6 @@ import {
   Zap,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-
 import { Button } from "../ui/button";
 import { FadeIn } from "../ui/fade-in";
 import Link from "next/link";
@@ -19,52 +18,53 @@ const industries = [
   {
     name: "Airports & Transportation",
     icon: Plane,
-    image: "", //industry-airport.png
-    description: "Critical infrastructure security and automation systems",
+    image: "/industry/airport.webp",
+    description: "Mission-critical security, communication, and automation for safe travel.",
   },
   {
     name: "Banking & Finance",
     icon: Landmark,
-    image: "", //industry-banking.png
-    description: "High-security solutions for financial institutions",
+    image: "/industry/banking.webp",
+    description: "High-reliability surveillance and access solutions for financial institutions.",
   },
   {
     name: "Energy & Utilities",
     icon: Zap,
-    image: "", //industry-energy.png
-    description: "Power generation and distribution facility management",
+    image: "/industry/power.webp",
+    description: "Intelligent systems for power plants, utilities, and critical infrastructure.",
   },
   {
     name: "Hospitality & Tourism",
     icon: Hotel,
-    image: "", // industry-hospitality.png
-    description: "Smart building solutions for hotels and resorts",
+    image: "/industry/hospitality.webp",
+    description: "Smart building management and security for hotels, resorts, and attractions.",
   },
   {
-    name: "Government & Public",
+    name: "Government & Public Sector",
     icon: Building,
-    image: "", // industry-government.png
-    description: "Secure and efficient public sector infrastructure",
+    image: "/industry/government.webp",
+    description: "Secure, connected, and efficient solutions for ministries and public services.",
   },
   {
     name: "Industrial & Manufacturing",
     icon: Factory,
-    image: "", // industry-manufacturing.png
-    description: "Automated systems for manufacturing facilities",
+    image: "/industry/industry.webp",
+    description: "Automation, monitoring, and safety systems for production environments.",
   },
   {
     name: "Education & Healthcare",
     icon: GraduationCap,
-    image: "", // industry-education.png
-    description: "Safe and smart environments for learning and care",
+    image: "/industry/healthcare.webp",
+    description: "Safe, secure, and connected environments for schools, universities, and hospitals.",
   },
   {
     name: "Retail & Commercial",
     icon: ShoppingBag,
-    image: "", // industry-retail.png
-    description: "Comprehensive solutions for commercial spaces",
+    image: "/industry/retail.webp",
+    description: "End-to-end technology solutions for malls, offices, and commercial hubs.",
   },
 ];
+
 
 export function IndustriesSection() {
   return (
@@ -102,7 +102,7 @@ export function IndustriesSection() {
                     height={300}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
+                  <div className="absolute inset-0 group-hover:bg-black/20 transition-colors duration-300" />
                   <div className="absolute top-4 left-4 p-2 rounded-full bg-white/20 backdrop-blur-sm">
                     <Icon className="h-6 w-6 text-white" />
                   </div>

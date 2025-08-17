@@ -18,7 +18,7 @@ export default function CompaniesSection() {
         "Pioneering advanced security technology to safeguard critical infrastructure across the UAE. From access control to comprehensive surveillance systems.",
       icon: RDTechLogo,
       href: "/rdtech-fze",
-      image: "",
+      image: "/general/rdtech/controlRoom.webp",
       services: [
         "Access Control Systems",
         "CCTV & Surveillance",
@@ -35,7 +35,7 @@ export default function CompaniesSection() {
         "Delivering comprehensive construction and contracting services with precision and reliability.",
       icon: AAContractingLogo,
       href: "/aa-contracting",
-      image: "",
+      image: "/general/aa/mep.webp",
       services: [
         "Civil Construction",
         "MEP Services",
@@ -52,7 +52,7 @@ export default function CompaniesSection() {
         "Transforming buildings into intelligent, efficient spaces through cutting-edge automation and control systems.",
       icon: CoreGridLogo,
       href: "/coregrid",
-      image: "",
+      image: "/general/rdtech/facial.webp",
       services: [
         "Lighting Control",
         "Home Automation",
@@ -104,7 +104,7 @@ export default function CompaniesSection() {
                       height={400}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
+                    <div className="absolute inset-0 group-hover:bg-black/20 transition-colors duration-300" />
                     <div className="aspect-square absolute top-4 left-4 rounded-full bg-white p-1 flex items-center justify-center">
                       <Logo size={60} />
                     </div>

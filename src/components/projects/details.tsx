@@ -1,15 +1,10 @@
-"use client"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
-import { ArrowLeft, ZoomIn, X } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import type { Project } from "../../../public/projectData" 
 
 export function ProjectDetail({ project }: { project: Project }) {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   return (
     <div className="min-h-screen">
@@ -106,7 +101,6 @@ export function ProjectDetail({ project }: { project: Project }) {
               <div
                 key={index}
                 className="relative group cursor-pointer overflow-hidden rounded-lg"
-                onClick={() => setSelectedImage(image)}
               >
                 <img
                   src={image || "/placeholder.svg"}
