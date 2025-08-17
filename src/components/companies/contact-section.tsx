@@ -16,7 +16,7 @@ export default function ContactSection({
   address,
 }: Readonly<ContactSectionProps>) {
   return (
-    <section className="py-16 max-md:px-6 bg-gray-100">
+    <section className="py-16 max-md:px-6 bg-white">
       <div className="container mx-auto px-4">
         {/* Heading */}
         <div className="text-center max-w-2xl mx-auto mb-12">

@@ -24,7 +24,7 @@ export default function AboutSection({
   image,
 }: Readonly<AboutSectionProps>) {
   return (
-    <section className="py-14 md:py-24 bg-white" data-header-theme="dark">
+    <section className="py-14 md:py-24 bg-gray-100" data-header-theme="dark">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
