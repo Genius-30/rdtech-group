@@ -21,7 +21,7 @@ const companies = [
     name: "RDTech FZE",
     description: "Security Systems & ELV/ICT Solutions",
     logo: RDTechLogo,
-    href: "/rdtech-fze",
+    href: "/companies/rdtech-fze",
     services: [
       "Access Control",
       "CCTV Systems",
@@ -33,7 +33,7 @@ const companies = [
     name: "AA Contracting",
     description: "Multi-disciplinary General Contracting",
     logo: AAContractingLogo,
-    href: "/aa-contracting",
+    href: "/companies/aa-contracting",
     services: [
       "Civil Construction",
       "MEP Services",
@@ -45,7 +45,7 @@ const companies = [
     name: "CoreGrid",
     description: "Building Automation & Smart Solutions",
     logo: CoreGridLogo,
-    href: "/coregrid",
+    href: "/companies/core-grid",
     services: [
       "BMS Systems",
       "Lighting Control",
@@ -60,23 +60,17 @@ export function Header() {
   const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
-    const sections = document.querySelectorAll("[data-header-theme]");
+    const handleScroll = () => {
+      if (window.scrollY < window.innerHeight) {
+        setTheme("light"); // Top of screen → white
+      } else {
+        setTheme("dark"); // After h-screen → black
+      }
+    };
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.find((entry) => entry.isIntersecting);
-        if (visible) {
-          setTheme(
-            visible.target.getAttribute("data-header-theme") as "light" | "dark"
-          );
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    sections.forEach((sec) => observer.observe(sec));
-
-    return () => observer.disconnect();
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -94,6 +88,14 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
+            <Link
+              href="/about"
+              onMouseEnter={() => setShowOverview(false)}
+              className="relative text-sm font-medium after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all hover:after:w-full px-1 bg-transparent hover:bg-transparent py-1.5"
+            >
+              About
+            </Link>
+
             <button
               onMouseEnter={() => setShowOverview(true)}
               className={`relative text-sm font-medium after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all hover:after:w-full px-1 bg-transparent hover:bg-transparent py-1.5 cursor-pointer ${
@@ -170,6 +172,11 @@ export function Header() {
                 <Link href="/" className="flex items-center mb-2">
                   <RDTechGroupLogo size={80} />
                 </Link>
+
+                <Link href="/about" className="text-foreground font-medium">
+                  About
+                </Link>
+
                 <Accordion type="single" collapsible>
                   <AccordionItem value="group" className="focus:outline-none">
                     <AccordionTrigger className="py-0 text-foreground">
@@ -205,7 +212,7 @@ export function Header() {
                 <Link href="/projects" className="text-foreground font-medium">
                   Projects
                 </Link>
-                <Link href="/contact" className="text-foreground font-medium">
+                <Link href="/#contact" className="text-foreground font-medium">
                   Contact
                 </Link>
               </SheetContent>

@@ -58,7 +58,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="min-h-screen flex flex-col py-20 snap-start"
+      className="min-h-screen flex flex-col py-20"
       data-header-theme="dark"
     >
       {/* Heading row */}
@@ -76,7 +76,7 @@ export default function ServicesSection() {
       </div>
 
       {/* Services Grid */}
-      <div className="relative container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+      <div className="relative container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
         {services.map((service, index) => (
           <FadeIn key={index} delay={index * 100}>
             <div className="relative w-full h-72 overflow-hidden group cursor-pointer rounded-4xl shadow-lg">
