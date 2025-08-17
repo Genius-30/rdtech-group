@@ -6,13 +6,9 @@ import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { ArrowLeft, ZoomIn, X } from "lucide-react"
 import Link from "next/link"
-import type { Project } from "@/lib/projects-data"
+import type { Project } from "../../../public/projectData" 
 
-interface ProjectDetailProps {
-  project: Project
-}
-
-export function ProjectDetail({ project }: ProjectDetailProps) {
+export function ProjectDetail({ project }: { project: Project }) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   return (
@@ -20,30 +16,25 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
       {/* Header */}
       <div className="bg-card border-b">
         <div className="max-w-7xl mx-auto px-6 py-6">
-          <Link href="/">
-            <Button variant="ghost" className="mb-4">
+          <Link href="/" className="flex items-center py-4 pt-2 hover:text-primary">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Projects
-            </Button>
           </Link>
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-              <Badge className="mb-2 bg-accent">{project.category}</Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-2">{project.title}</h1>
-              <p className="text-xl text-muted-foreground">
-                {project.location} • {project.year}
+              <p className="text-xl tracking-wide text-muted-foreground">
+                {project.location}  •  {project.year}
               </p>
             </div>
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Start Similar Project
-            </Button>
+            
           </div>
         </div>
       </div>
 
       {/* Hero Image */}
-      <div className="relative h-96 md:h-[600px] overflow-hidden">
-        <img src={project.heroImage || "/placeholder.svg"} alt={project.title} className="w-full h-full object-cover" />
+      <div className="relative max-w-7xl mx-auto rounded-xl h-96 md:h-[600px] overflow-hidden">
+        <img src={project.heroImage || "/placeholder.svg"} alt={project.title} className="w-full h-full object-contain" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
       </div>
 
@@ -57,7 +48,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
 
               <h3 className="text-2xl font-bold mb-4">Key Features</h3>
               <ul className="space-y-2 mb-8">
-                {project.features.map((feature, index) => (
+                {project?.features?.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                     <span>{feature}</span>
@@ -71,9 +62,9 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
           </div>
 
           {/* Project Stats */}
-          <div className="space-y-6">
-            <Card className="p-6">
-              <h3 className="font-bold text-xl mb-4">Project Details</h3>
+          <div className="space-y-4">
+            <Card className="p-6 shadow-xl border-l-4 border-l-primary rounded-l-none">
+              <h3 className="font-bold text-xl">Project Details</h3>
               <div className="space-y-4">
                 <div>
                   <span className="text-sm text-muted-foreground">Duration</span>
@@ -94,10 +85,10 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
               </div>
             </Card>
 
-            <Card className="p-6">
-              <h3 className="font-bold text-xl mb-4">Services Provided</h3>
+            <Card className="p-6 shadow-2xl border-l-4 border-l-primary rounded-l-none">
+              <h3 className="font-bold text-xl">Services Provided</h3>
               <div className="flex flex-wrap gap-2">
-                {project.services.map((service, index) => (
+                {project?.services?.map((service, index) => (
                   <Badge key={index} variant="secondary">
                     {service}
                   </Badge>
@@ -111,7 +102,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
         <div className="mt-16">
           <h2 className="text-3xl font-bold mb-8">Project Gallery</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {project.gallery.map((image, index) => (
+            {project?.gallery?.map((image, index) => (
               <div
                 key={index}
                 className="relative group cursor-pointer overflow-hidden rounded-lg"
@@ -120,33 +111,13 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
                 <img
                   src={image || "/placeholder.svg"}
                   alt={`${project.title} gallery ${index + 1}`}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-64 object-cover"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-                  <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
               </div>
             ))}
           </div>
         </div>
       </div>
-
-      {/* Image Modal */}
-      {selectedImage && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-          <button
-            onClick={() => setSelectedImage(null)}
-            className="absolute top-4 right-4 p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
-          >
-            <X className="w-6 h-6 text-white" />
-          </button>
-          <img
-            src={selectedImage || "/placeholder.svg"}
-            alt="Gallery image"
-            className="max-w-full max-h-full object-contain"
-          />
-        </div>
-      )}
     </div>
   )
 }

@@ -20,10 +20,11 @@ export default function ServicesSection({
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
         <div className="relative min-h-[300px] lg:min-h-[400px] w-full">
           <SafeImage
-            src={image.src}
+            src="/home/hero/hero.png"
             alt={image.alt}
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            quality={80}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
             className="rounded-xl shadow-lg object-cover"
           />
         </div>

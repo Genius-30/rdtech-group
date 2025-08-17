@@ -135,14 +135,14 @@ export function Header() {
                   <Link
                     key={company.name}
                     href={company.href}
-                    className="group space-y-2 rounded-lg p-4 hover:bg-accent transition-colors"
+                    className="group space-y-2 rounded-lg p-4 transition-colors"
                   >
                     <div className="flex items-center space-x-3">
                       <div className="flex-shrink-0 w-12 h-12 rounded-md bg-muted flex items-center justify-center">
                         <Logo />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-white">
+                        <h3 className="font-semibold group-hover:text-accent text-white">
                           {company.name}
                         </h3>
                         <p className="text-sm text-zinc-50">
