@@ -21,7 +21,7 @@ export default function ClientsSection() {
 
   return (
     <section
-      className="relative py-20 overflow-hidden bg-gray-50"
+      className="relative py-20 overflow-hidden bg-gray-100"
       data-header-theme="dark"
     >
       <div className="container mx-auto px-4 flex flex-col items-center">

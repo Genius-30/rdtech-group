@@ -12,6 +12,7 @@ export default function ServicesSection() {
         "Comprehensive security solutions including CCTV, access control, and threat detection systems.",
       video:
         "https://videos.pexels.com/video-files/7710243/7710243-uhd_2560_1440_30fps.mp4",
+      thumbnail: "/general/rdtech/cctv.webp",
     },
     {
       icon: Network,
@@ -20,6 +21,7 @@ export default function ServicesSection() {
         "End-to-end structured cabling, converged data & voice solutions with redundant failover technology.",
       video:
         "https://videos.pexels.com/video-files/18069803/18069803-uhd_1440_2560_24fps.mp4",
+      thumbnail: "/general/rdtech/cctv.webp",
     },
     {
       icon: Building,
@@ -28,6 +30,7 @@ export default function ServicesSection() {
         "Intelligent networked control products for smart building management and automation.",
       video:
         "https://videos.pexels.com/video-files/18069166/18069166-uhd_2560_1440_24fps.mp4",
+      thumbnail: "/general/rdtech/cctv.webp",
     },
     {
       icon: Server,
@@ -36,6 +39,7 @@ export default function ServicesSection() {
         "Complete range of enterprise servers, storage solutions, and disaster recovery systems.",
       video:
         "https://videos.pexels.com/video-files/18069701/18069701-uhd_2560_1440_24fps.mp4",
+      thumbnail: "/general/rdtech/cctv.webp",
     },
     {
       icon: Wifi,
@@ -44,6 +48,7 @@ export default function ServicesSection() {
         "Corporate wireless coverage with support for multiple mobility applications and location tracking.",
       video:
         "https://videos.pexels.com/video-files/18069232/18069232-uhd_2560_1440_24fps.mp4",
+      thumbnail: "/general/rdtech/cctv.webp",
     },
     {
       icon: Camera,
@@ -52,13 +57,14 @@ export default function ServicesSection() {
         "Professional AV systems, background music, and large format display solutions.",
       video:
         "https://videos.pexels.com/video-files/18069232/18069232-uhd_2560_1440_24fps.mp4",
+      thumbnail: "/general/rdtech/cctv.webp",
     },
   ];
 
   return (
     <section
       id="services"
-      className="min-h-screen flex flex-col py-20"
+      className="min-h-screen flex flex-col py-20 max-w-7xl mx-auto "
       data-header-theme="dark"
     >
       {/* Heading row */}
@@ -69,8 +75,8 @@ export default function ServicesSection() {
           </h2>
         </FadeIn>
         <FadeIn delay={100}>
-          <p className="text-muted-foreground mt-1">
-            Comprehensive technology solutions for modern enterprises
+          <p className="text-muted-foreground max-w-xl text-center mt-1">
+            Comprehensive technology solutions tailored to empower and transform modern enterprises
           </p>
         </FadeIn>
       </div>
@@ -81,11 +87,11 @@ export default function ServicesSection() {
           <FadeIn key={index} delay={index * 100}>
             <div className="relative w-full h-72 overflow-hidden group cursor-pointer rounded-4xl shadow-lg">
               <SafeImage
-                src=""
+                src={service.thumbnail}
                 alt={service.title}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                className="w-full h-full transition-all duration-300 object-cover object-center group-hover:scale-105"
               />
 
               {/* Overlay with icon & text */}

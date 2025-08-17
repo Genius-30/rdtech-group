@@ -42,10 +42,10 @@ export default function WorldMap({
   };
 
   return (
-    <div className="w-full aspect-[2/1] dark:bg-black bg-white rounded-lg  relative font-sans">
+    <div className="w-full aspect-[2/1] dark:bg-black bg-white rounded-lg relative font-sans">
       <img
         src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
-        className="h-full w-full rounded-lg border-2 pointer-events-none select-none"
+        className="h-full w-full rounded-lg pointer-events-none select-none"
         alt="world map"
         height="495"
         width="1056"

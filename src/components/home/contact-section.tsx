@@ -32,142 +32,144 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="min-h-screen flex flex-col items-center py-20 bg-gray-50"
+      className="min-h-screen flex flex-col items-center py-20 bg-gray-100"
       data-header-theme="dark"
     >
-      {/* Heading */}
-      <div className="container mx-auto px-4 flex flex-col items-center text-center">
-        <FadeIn>
-          <h2 className="w-auto text-xl md:text-2xl font-bold text-white bg-primary backdrop-blur-md py-2 px-6 rounded-full shadow-lg">
-            Get in Touch
-          </h2>
-        </FadeIn>
-        <FadeIn delay={100}>
-          <p className="text-muted-foreground mt-2 max-w-2xl">
-            Ready to transform your business with cutting-edge technology
-            solutions? We’re here to help.
-          </p>
-        </FadeIn>
-      </div>
+      <div className="max-w-7xl mx-auto">
+        {/* Heading */}
+        <div className=" mx-auto px-4 flex flex-col items-center text-center">
+          <FadeIn>
+            <h2 className="w-auto text-xl md:text-2xl font-bold text-white bg-primary backdrop-blur-md py-2 px-6 rounded-full shadow-lg">
+              Get in Touch
+            </h2>
+          </FadeIn>
+          <FadeIn delay={100}>
+            <p className="text-muted-foreground mt-2 max-w-2xl">
+              Ready to transform your business with cutting-edge technology
+              solutions?<br/> We’re here to help.
+            </p>
+          </FadeIn>
+        </div>
 
-      {/* Layout */}
-      <div className="container mx-auto px-4 mt-12 grid lg:grid-cols-2 gap-8 items-start">
-        {/* Contact Form */}
-        <FadeIn direction="left" className="h-full">
-          <form
-            onSubmit={handleSubmit}
-            className="p-8 rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm shadow-lg space-y-6 h-full"
-          >
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-slate-600 mb-1"
-                >
-                  Name
-                </label>
-                <Input id="name" required placeholder="Jane Smith" />
-              </div>
-              <div>
-                <label
-                  htmlFor="company"
-                  className="block text-sm font-medium text-slate-600 mb-1"
-                >
-                  Company
-                </label>
-                <Input id="company" required placeholder="Acme Corp" />
-              </div>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-slate-600 mb-1"
-                >
-                  Email
-                </label>
-                <Input
-                  id="email"
-                  type="email"
-                  required
-                  placeholder="jane@company.com"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="phone"
-                  className="block text-sm font-medium text-slate-600 mb-1"
-                >
-                  Phone
-                </label>
-                <Input id="phone" placeholder="+971 4 XXX XXXX" />
-              </div>
-            </div>
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-slate-600 mb-1"
-              >
-                Message
-              </label>
-              <Textarea
-                id="message"
-                required
-                placeholder="Tell us about your project or requirements..."
-              />
-            </div>
-            <div className="flex justify-end">
-              <Button type="submit" className="px-6">
-                Send Message
-              </Button>
-            </div>
-          </form>
-        </FadeIn>
-
-        {/* Contact Info & Map */}
-        <FadeIn direction="right">
-          <div className="space-y-6">
-            {/* Info Card */}
-            <div className="p-6 rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm shadow-lg space-y-4">
-              <div className="flex items-center gap-3 text-slate-800">
-                <Mail className="h-5 w-5 text-primary" />
-                <a
-                  href="mailto:info@rdtechgroup.ae"
-                  className="tracking-wider hover:underline"
-                >
-                  info@rdtechgroup.ae
-                </a>
-              </div>
-              <div className="flex items-center gap-3 text-slate-800">
-                <Phone className="h-5 w-5 text-primary" />
-                <a
-                  href="tel:+971426669974"
-                  className="tracking-wide hover:underline"
-                >
-                  +971 4 XXX XXXX
-                </a>
-              </div>
-              <div className="flex items-start gap-3 text-slate-800">
-                <MapPin className="h-5 w-5 text-primary mt-1" />
+        {/* Layout */}
+        <div className=" mx-auto px-4 mt-12 grid lg:grid-cols-2 gap-8 items-start">
+          {/* Contact Form */}
+          <FadeIn direction="left" className="h-full">
+            <form
+              onSubmit={handleSubmit}
+              className="p-8 rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm shadow-lg space-y-6 h-full"
+            >
+              <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  Dubai, United Arab Emirates
-                  <br />
-                  Abu Dhabi Office Available
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-slate-600 mb-1"
+                  >
+                    Name
+                  </label>
+                  <Input id="name" required placeholder="Jane Smith" />
+                </div>
+                <div>
+                  <label
+                    htmlFor="company"
+                    className="block text-sm font-medium text-slate-600 mb-1"
+                  >
+                    Company
+                  </label>
+                  <Input id="company" required placeholder="Acme Corp" />
                 </div>
               </div>
-            </div>
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-slate-600 mb-1"
+                  >
+                    Email
+                  </label>
+                  <Input
+                    id="email"
+                    type="email"
+                    required
+                    placeholder="jane@company.com"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium text-slate-600 mb-1"
+                  >
+                    Phone
+                  </label>
+                  <Input id="phone" placeholder="+971 4 XXX XXXX" />
+                </div>
+              </div>
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-slate-600 mb-1"
+                >
+                  Message
+                </label>
+                <Textarea
+                  id="message"
+                  required
+                  placeholder="Tell us about your project or requirements..."
+                />
+              </div>
+              <div className="flex justify-end">
+                <Button type="submit" className="px-6">
+                  Send Message
+                </Button>
+              </div>
+            </form>
+          </FadeIn>
 
-            {/* Map */}
-            <div className="rounded-3xl overflow-hidden border border-gray-200 shadow-lg">
-              <iframe
-                title="RDTech Group Office Map"
-                src="https://www.google.com/maps?q=AFZ%20Office%201038,%20Ajman%20Free%20Zone,%20UAE&output=embed"
-                className="w-full h-[280px]"
-                loading="lazy"
-              ></iframe>
+          {/* Contact Info & Map */}
+          <FadeIn direction="right">
+            <div className="space-y-6">
+              {/* Info Card */}
+              <div className="p-6 rounded-3xl border border-gray-200 bg-white/80 backdrop-blur-sm shadow-lg space-y-4">
+                <div className="flex items-center gap-3 text-slate-800">
+                  <Mail className="h-5 w-5 text-primary" />
+                  <a
+                    href="mailto:info@rdtechgroup.ae"
+                    className="tracking-wider hover:underline"
+                  >
+                    info@rdtechgroup.ae
+                  </a>
+                </div>
+                <div className="flex items-center gap-3 text-slate-800">
+                  <Phone className="h-5 w-5 text-primary" />
+                  <a
+                    href="tel:+971426669974"
+                    className="tracking-wide hover:underline"
+                  >
+                    +971 4 XXX XXXX
+                  </a>
+                </div>
+                <div className="flex items-start gap-3 text-slate-800">
+                  <MapPin className="h-5 w-5 text-primary mt-1" />
+                  <div>
+                    Dubai, United Arab Emirates
+                    <br />
+                    Abu Dhabi Office Available
+                  </div>
+                </div>
+              </div>
+
+              {/* Map */}
+              <div className="rounded-3xl overflow-hidden border border-gray-200 shadow-lg">
+                <iframe
+                  title="RDTech Group Office Map"
+                  src="https://www.google.com/maps?q=AFZ%20Office%201038,%20Ajman%20Free%20Zone,%20UAE&output=embed"
+                  className="w-full h-[280px]"
+                  loading="lazy"
+                ></iframe>
+              </div>
             </div>
-          </div>
-        </FadeIn>
+          </FadeIn>
+        </div>
       </div>
     </section>
   );

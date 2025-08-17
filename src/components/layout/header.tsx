@@ -42,7 +42,7 @@ const companies = [
     ],
   },
   {
-    name: "CoreGrid",
+    name: "CoreGrid Solutions",
     description: "Building Automation & Smart Solutions",
     logo: CoreGridLogo,
     href: "/companies/core-grid",
@@ -135,7 +135,7 @@ export function Header() {
                   <Link
                     key={company.name}
                     href={company.href}
-                    className="group space-y-2 rounded-lg p-4 transition-colors"
+                    className="group space-y-2 rounded-lg p-4 transition-colors hover:border-b-accent border-transparent border-4 rounded-b-none"
                   >
                     <div className="flex items-center space-x-3">
                       <div className="flex-shrink-0 w-12 h-12 rounded-md bg-muted flex items-center justify-center">
@@ -190,7 +190,7 @@ export function Header() {
                             <Link
                               key={company.name}
                               href={company.href}
-                              className="flex items-center space-x-3 rounded-lg p-2 hover:bg-gray-50"
+                              className="flex items-center space-x-3 rounded-lg p-2 hover:bg-gray-100"
                             >
                               <Icon />
                               <div>

@@ -34,7 +34,7 @@ export function ProjectDetail({ project }: { project: Project }) {
 
       {/* Hero Image */}
       <div className="relative max-w-7xl mx-auto rounded-xl h-96 md:h-[600px] overflow-hidden">
-        <img src={project.heroImage || "/placeholder.svg"} alt={project.title} className="w-full h-full object-contain" />
+        <img src={project.heroImage || "/placeholder.svg"} alt={project.title} className="w-full h-full object-cover object-center" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
       </div>
 

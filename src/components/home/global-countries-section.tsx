@@ -58,11 +58,11 @@ export default function GlobalCountriesSection() {
 
   return (
     <section
-      className="flex flex-col items-center py-20"
+      className="flex flex-col items-center py-20 max-w-7xl mx-auto"
       data-header-theme="dark"
     >
       {/* Heading */}
-      <div className="container mx-auto px-4 flex flex-col items-center">
+      <div className="container mx-auto px-4  flex flex-col items-center">
         <FadeIn>
           <h2 className="w-auto text-xl md:text-2xl font-bold text-white bg-primary backdrop-blur-md py-2 px-4 rounded-full shadow-md">
             Global Presence

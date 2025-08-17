@@ -104,7 +104,7 @@ export const projects: Project[] = [
     gallery: [
       "/projects/rdtech/burjG1.webp",
       "/projects/rdtech/burjG2.webp",
-      "/projects/rdtech/burjG3.webp"
+      "/projects/rdtech/burjG3.jpg"
     ],
     duration: "24 months",
     size: "828 m tower – mixed-use facility",

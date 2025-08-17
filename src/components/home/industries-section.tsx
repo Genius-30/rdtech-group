@@ -8,7 +8,7 @@ import {
   ShoppingBag,
   Zap,
 } from "lucide-react";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 
 import { Button } from "../ui/button";
 import { FadeIn } from "../ui/fade-in";
@@ -68,8 +68,8 @@ const industries = [
 
 export function IndustriesSection() {
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-24 pb-0 bg-white ">
+      <div className="container mx-auto px-4 max-w-7xl ">
         {/* Section Header */}
         <div className="container mx-auto px-4 flex flex-col items-center text-center">
           <FadeIn>
@@ -86,7 +86,7 @@ export function IndustriesSection() {
         </div>
 
         {/* Industries Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
           {industries.map((industry) => {
             const Icon = industry.icon;
             return (
@@ -120,12 +120,13 @@ export function IndustriesSection() {
             );
           })}
         </div>
+      </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-8">
-          <div className="bg-primary/5 rounded-2xl p-8 md:p-12">
+       {/* Call to Action */}
+        <div className="text-center mt-16">
+          <div className="bg-primary/10 rounded-2xl p-8 md:p-12">
             <h3 className="font-heading text-3xl font-bold text-gray-900 mb-4">
-              Don&#39;t See Your Industry?
+              Don&#39;t See Our Industry?
             </h3>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
               We work across many sectors and are always ready to tackle new
@@ -141,7 +142,6 @@ export function IndustriesSection() {
             </div>
           </div>
         </div>
-      </div>
     </section>
   );
 }

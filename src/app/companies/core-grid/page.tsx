@@ -42,7 +42,7 @@ export default function page() {
   return (
     <main className="min-h-screen">
       <HeroSection
-        companyName="CoreGrid"
+        companyName="CoreGrid Solutions"
         slogan="Building Automation & Smart Solutions"
         description="Transforming buildings into intelligent, efficient spaces through cutting-edge automation and control systems. Creating smarter environments for better living and working."
         backgroundImage="/placeholder.png"
@@ -51,9 +51,9 @@ export default function page() {
         websiteLink="https://www.loytec.com"
       />
       <AboutSection
-        title="About CoreGrid"
+        title="About CoreGrid Solutions"
         description={[
-          "CoreGrid is the smart building and automation division of RDTech Group, specializing in intelligent building management systems, home automation, and energy optimization solutions.",
+          "CoreGrid Solutions is the smart building and automation division of RDTech Group, specializing in intelligent building management systems, home automation, and energy optimization solutions.",
           " We leverage IoT technology, AI-driven analytics, and advanced control systems to create environments that are not only smart but also sustainable, efficient, and user-friendly.",
         ]}
         stats={[

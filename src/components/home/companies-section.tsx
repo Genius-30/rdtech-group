@@ -32,7 +32,7 @@ export default function CompaniesSection() {
       name: "Al Ausus Al Arbaa General Contracting",
       tagline: "Multi-disciplinary Contracting Excellence",
       description:
-        "Delivering comprehensive construction and contracting services with precision and reliability. Building the infrastructure of tomorrow.",
+        "Delivering comprehensive construction and contracting services with precision and reliability.",
       icon: AAContractingLogo,
       href: "/aa-contracting",
       image: "",
@@ -46,7 +46,7 @@ export default function CompaniesSection() {
       buttonLabel: "AA Contracting",
     },
     {
-      name: "CoreGrid",
+      name: "CoreGrid Solutions",
       tagline: "Building Automation & Smart Solutions",
       description:
         "Transforming buildings into intelligent, efficient spaces through cutting-edge automation and control systems.",
@@ -54,108 +54,110 @@ export default function CompaniesSection() {
       href: "/coregrid",
       image: "",
       services: [
-        "Building Management Systems",
         "Lighting Control",
         "Home Automation",
         "Energy Management",
+        "Building Management",
       ],
       color: "bg-purple-600",
-      buttonLabel: "CoreGrid",
+      buttonLabel: "CoreGrid Solutions",
     },
   ];
 
   return (
     <section
-      className="min-h-screen flex flex-col py-20 bg-gray-50"
+      className="min-h-screen flex flex-col py-20 bg-gray-100"
       data-header-theme="dark"
     >
-      {/* Heading */}
-      <div className="container mx-auto px-4 flex flex-col items-center text-center">
-        <FadeIn>
-          <h2 className="text-xl md:text-2xl font-bold text-white bg-primary backdrop-blur-md py-2 px-6 rounded-full shadow-lg">
-            Our Companies
-          </h2>
-        </FadeIn>
-        <FadeIn delay={100}>
-          <p className="text-muted-foreground mt-3 max-w-2xl">
-            Three specialized companies working together to deliver
-            comprehensive solutions across security, construction, and
-            automation sectors.
-          </p>
-        </FadeIn>
-      </div>
+      <div className="max-w-7xl mx-auto">
+        {/* Heading */}
+        <div className="container mx-auto px-4 flex flex-col items-center text-center">
+          <FadeIn>
+            <h2 className="text-xl md:text-2xl font-bold text-white bg-primary backdrop-blur-md py-2 px-6 rounded-full shadow-lg">
+              Our Companies
+            </h2>
+          </FadeIn>
+          <FadeIn delay={100}>
+            <p className="text-muted-foreground mt-3 max-w-2xl">
+              Three specialized companies working together to deliver
+              comprehensive solutions across security, construction, and
+              automation sectors.
+            </p>
+          </FadeIn>
+        </div>
 
-      {/* Cards */}
-      <div className="relative container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-14">
-        {companies.map((company) => {
-          const Logo = company.icon;
-          return (
-            <FadeIn key={company.name} delay={200} className="h-full">
-              <Card
-                key={company.name}
-                className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 py-0 h-full pb-6"
-              >
-                <div className="relative h-64 overflow-hidden">
-                  <SafeImage
-                    src={company.image || ""}
-                    alt={company.name}
-                    width={800}
-                    height={400}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
-                  <div className="aspect-square absolute top-4 left-4 rounded-full bg-white p-1 flex items-center justify-center">
-                    <Logo size={60} />
-                  </div>
-                </div>
-
-                <CardContent className="px-8">
-                  <div className="space-y-4">
-                    <div>
-                      <h3 className="font-heading text-2xl font-bold text-gray-900 mb-2">
-                        {company.name}
-                      </h3>
-                      <p className="text-primary font-semibold">
-                        {company.tagline}
-                      </p>
+        {/* Cards */}
+        <div className="relative container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
+          {companies.map((company) => {
+            const Logo = company.icon;
+            return (
+              <FadeIn key={company.name} delay={200} className="h-full">
+                <Card
+                  key={company.name}
+                  className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 py-0 h-full pb-6"
+                >
+                  <div className="relative h-64 overflow-hidden">
+                    <SafeImage
+                      src={company.image || ""}
+                      alt={company.name}
+                      width={800}
+                      height={400}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300" />
+                    <div className="aspect-square absolute top-4 left-4 rounded-full bg-white p-1 flex items-center justify-center">
+                      <Logo size={60} />
                     </div>
+                  </div>
 
-                    <p className="text-muted-foreground leading-relaxed">
-                      {company.description}
-                    </p>
+                  <CardContent className="px-8">
+                    <div className="space-y-4">
+                      <div>
+                        <h3 className="font-heading text-2xl font-bold text-gray-900">
+                          {company.name}
+                        </h3>
+                        <p className="text-primary font-semibold">
+                          {company.tagline}
+                        </p>
+                      </div>
 
-                    <div className="space-y-2">
-                      <h4 className="font-semibold text-foreground">
-                        Key Services:
-                      </h4>
-                      <div className="grid grid-cols-2 gap-1">
-                        {company.services.map((service) => (
-                          <div
-                            key={service}
-                            className="text-sm text-muted-foreground"
-                          >
-                            • {service}
-                          </div>
-                        ))}
+                      <p className="text-muted-foreground leading-relaxed">
+                        {company.description}
+                      </p>
+
+                      <div className="space-y-2">
+                        <h4 className="font-semibold text-foreground">
+                          Key Services:
+                        </h4>
+                        <div className="grid grid-cols-2 gap-1">
+                          {company.services.map((service) => (
+                            <div
+                              key={service}
+                              className="text-sm text-muted-foreground"
+                            >
+                              • {service}
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </CardContent>
-                <CardFooter className="mt-auto">
-                  <Button
-                    asChild
-                    className="w-full group-hover:bg-primary/90 transition-colors duration-300"
-                  >
-                    <Link href={`/companies/${company.href}`}>
-                      Explore {company.buttonLabel}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
-            </FadeIn>
-          );
-        })}
+                  </CardContent>
+                  <CardFooter className="mt-auto">
+                    <Button
+                      asChild
+                      className="w-full group-hover:bg-primary/90 transition-colors duration-300"
+                    >
+                      <Link href={`/companies/${company.href}`}>
+                        Explore {company.buttonLabel}
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </FadeIn>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

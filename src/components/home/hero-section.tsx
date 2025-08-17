@@ -68,23 +68,12 @@ export default function HeroSection() {
           <FadeIn delay={600}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
               <Button
-                asChild
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg btn-primary cursor-pointer shadow-lg shadow-black/15 flex items-center"
-              >
-                <Link href="/#services">
-                  Explore Our Services
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-
-              <Button
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white px-8 py-4 text-lg bg-transparent hover-lift cursor-pointer shadow-lg shadow-black/15"
+                className="border-white text-white hover:bg-accent hover:text-white hover:border-transparent px-8 py-4 text-lg bg-transparent hover-lift cursor-pointer shadow-lg shadow-black/15"
               >
+                <p className="-mt-[5px]">Explore Our Services</p>
                 <Play className="mr-2 h-5 w-5" />
-                Watch Our Story
               </Button>
             </div>
           </FadeIn>

@@ -55,14 +55,14 @@ const features = [
   },
   {
     icon: ThumbsUp,
-    title: "Highest level of partnership with the",
+    title: "Highest level of partnership",
     subtitle: "Vendor",
   },
 ];
 
 export default function WhyRDTechGroup() {
   return (
-    <section className="py-20">
+    <section className="py-20 max-w-7xl mx-auto">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="flex flex-col items-center mb-12">
