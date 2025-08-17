@@ -12,7 +12,7 @@ export default function ServicesSection() {
         "Comprehensive security solutions including CCTV, access control, and threat detection systems.",
       video:
         "https://videos.pexels.com/video-files/7710243/7710243-uhd_2560_1440_30fps.mp4",
-      thumbnail: "/general/rdtech/cctv.webp",
+      thumbnail: "/general/rdtech/cctv.png",
     },
     {
       icon: Network,
