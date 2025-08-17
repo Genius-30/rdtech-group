@@ -7,33 +7,86 @@ import { SafeImage } from "../ui/safe-image";
 import SectionHeader from "./section-header";
 
 export default function ClientsSection() {
-  const clientLogos = [
-    { name: "Dubai Health Authority", src: "" },
-    { name: "UAE Ministries", src: "" },
-    { name: "Civil Defense", src: "" },
-    { name: "Transportation Authorities", src: "" },
-    { name: "Bank of Baroda", src: "" },
-    { name: "Major UAE Banks", src: "" },
-    { name: "Emaar Properties", src: "" },
-    { name: "Burj Khalifa", src: "" },
-    { name: "Nakheel", src: "" },
-    { name: "Eastern Mangroves Resort", src: "" },
-    { name: "Energy Companies", src: "" },
-  ];
+  // Define categories & logos
+  const clientCategories: Record<string, string[]> = {
+    commercial: [
+      "bakerHughes.webp",
+      "lulu.webp",
+      "maiDubai.webp",
+      "meridien.webp",
+      "nakheel.png",
+      "nmc.webp",
+      "vfs.webp",
+      "warnerBros.webp",
+    ],
+    banking: [
+      "adcb.webp",
+      "adib.webp",
+      "ajman.webp",
+      "bob.png",
+      "citi.png",
+      "commercial.png",
+      "mashreq.webp",
+      "nbq.webp",
+      "rakbank.webp",
+      "sharjah.png",
+    ],
+    health: [
+      "alZahra.webp",
+      "dubaiHealth.webp",
+      "emaar.png",
+      "nextcare.webp",
+      "wellcare.webp",
+      "zulekha.webp",
+    ],
+    hotels: [
+      "anantara.webp",
+      "armani.png",
+      "conrad.png",
+      "habtoor.webp",
+      "ibis.png",
+      "jumeirah.png",
+      "marriott.webp",
+      "pullman.png",
+      "renaissance.webp",
+      "sofitel.png",
+      "stRegis.webp",
+    ],
+    infrastructure: [
+      "abuDhabiPolice.webp",
+      "emaar.png",
+      "rashid.webp",
+      "rta.webp",
+      "tdic.webp",
+      "twofour54.webp",
+    ],
+    security: [
+      "bosch.webp",
+      "gantner.gif",
+      "garrett.webp",
+      "hid.webp",
+      "honeywell.webp",
+      "imron.webp",
+      "samsung.png",
+      "sony.webp",
+    ],
+    topEnterprise: [
+      "accor.png",
+      "dubaiHolding.png",
+      "honeywell.webp",
+      "landmarkGroup.webp",
+      "majid.webp",
+      "unionProperties.png",
+    ],
+  };
 
-  const clientLogos2 = [
-    { name: "Dubai Health Authority", src: "" },
-    { name: "UAE Ministries", src: "" },
-    { name: "Civil Defense", src: "" },
-    { name: "Transportation Authorities", src: "" },
-    { name: "Bank of Baroda", src: "" },
-    { name: "Major UAE Banks", src: "" },
-    { name: "Emaar Properties", src: "" },
-    { name: "Burj Khalifa", src: "" },
-    { name: "Nakheel", src: "" },
-    { name: "Eastern Mangroves Resort", src: "" },
-    { name: "Energy Companies", src: "" },
-  ];
+  // Convert categories into rows
+  const clientRows = Object.entries(clientCategories).map(([category, logos]) =>
+    logos.map((logo) => ({
+      name: logo.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()), // Format name
+      src: `/clients/${category}/${logo}`,
+    }))
+  );
 
   return (
     <section
@@ -46,36 +99,31 @@ export default function ClientsSection() {
       />
 
       <div className="container mx-auto px-4 relative z-10 mt-12">
-        <ScrollVelocityContainer className="space-y-8">
-          {/* Row 1 */}
-          <ScrollVelocityRow baseVelocity={5} direction={1}>
-            {clientLogos.map((logo, i) => (
-              <div key={i} className="flex-shrink-0 w-40 h-20 relative mx-2">
-                <SafeImage
-                  src={logo.src || ""}
-                  alt={logo.name}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                  className="object-contain rounded-md"
-                />
-              </div>
-            ))}
-          </ScrollVelocityRow>
-
-          {/* Row 2 */}
-          <ScrollVelocityRow baseVelocity={5} direction={-1}>
-            {clientLogos2.map((logo, i) => (
-              <div key={i} className="flex-shrink-0 w-40 h-20 relative mx-2">
-                <SafeImage
-                  src={logo.src || ""}
-                  alt={logo.name}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                  className="object-contain rounded-md"
-                />
-              </div>
-            ))}
-          </ScrollVelocityRow>
+        <ScrollVelocityContainer className="space-y-4">
+          {clientRows.map((logos, rowIndex) => (
+            <ScrollVelocityRow
+              key={rowIndex}
+              baseVelocity={5}
+              direction={rowIndex % 2 === 0 ? 1 : -1}
+            >
+              {logos.map((logo, i) => (
+                <div
+                  key={`${rowIndex}-${i}`}
+                  className="flex-shrink-0 w-40 h-20 relative mx-2 flex items-center justify-center bg-white rounded-md p-2 overflow-hidden"
+                >
+                  <SafeImage
+                    src={logo.src}
+                    alt={logo.name}
+                    width={160}
+                    height={80}
+                    loading="lazy"
+                    quality={100}
+                    className="object-contain"
+                  />
+                </div>
+              ))}
+            </ScrollVelocityRow>
+          ))}
         </ScrollVelocityContainer>
       </div>
     </section>

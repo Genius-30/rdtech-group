@@ -183,54 +183,74 @@ export function Header() {
                   }`}
                 />
               </SheetTrigger>
-              <SheetContent side="right" className="p-4 gap-3 z-[100]">
-                {/* Logo */}
-                <Link href="/" className="flex items-center mb-2">
-                  <RDTechGroupLogo size={80} />
-                </Link>
+              <SheetContent side="right" className="p-6 gap-6 z-[100]">
+                <div className="flex flex-col h-full">
+                  {/* Logo */}
+                  <Link href="/" className="flex items-center mb-6">
+                    <RDTechGroupLogo size={100} />
+                  </Link>
 
-                <Link href="/about" className="text-foreground font-medium">
-                  About
-                </Link>
+                  <nav className="flex flex-col gap-4 flex-1">
+                    <Link
+                      href="/about"
+                      className="text-lg font-medium hover:text-accent transition"
+                    >
+                      About
+                    </Link>
 
-                <Accordion type="single" collapsible>
-                  <AccordionItem value="group" className="focus:outline-none">
-                    <AccordionTrigger className="py-0 text-foreground">
-                      Group Overview
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <div className="space-y-4">
-                        {companies.map((company) => {
-                          const Icon = company.logo;
-                          return (
-                            <Link
-                              key={company.name}
-                              href={company.href}
-                              className="flex items-center space-x-3 rounded-lg p-2 hover:bg-gray-100"
-                            >
-                              <Icon />
-                              <div>
-                                <h3 className="text-sm font-semibold">
-                                  {company.name}
-                                </h3>
-                                <p className="text-xs text-muted-foreground">
-                                  {company.description}
-                                </p>
-                              </div>
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
+                    {/* Group Overview Accordion */}
+                    <Accordion type="single" collapsible>
+                      <AccordionItem value="group" className="border-b">
+                        <AccordionTrigger className="py-0 text-lg font-medium hover:text-accent transition">
+                          Group Overview
+                        </AccordionTrigger>
+                        <AccordionContent aria-describedby="group-overview">
+                          <div className="space-y-4 pl-2">
+                            {companies.map((company) => {
+                              const Logo = company.logo;
+                              return (
+                                <Link
+                                  key={company.name}
+                                  href={company.href}
+                                  className="flex items-center space-x-3 rounded-lg p-2 hover:bg-accent/10 transition"
+                                >
+                                  <div className="w-10 h-10 flex items-center justify-center rounded-md border bg-muted">
+                                    <Logo />
+                                  </div>
+                                  <div>
+                                    <h3 className="text-sm font-semibold">
+                                      {company.name}
+                                    </h3>
+                                    <p className="text-xs text-muted-foreground">
+                                      {company.description}
+                                    </p>
+                                  </div>
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
 
-                <Link href="/projects" className="text-foreground font-medium">
-                  Projects
-                </Link>
-                <Link href="/#contact" className="text-foreground font-medium">
-                  Contact
-                </Link>
+                    <Link
+                      href="/projects"
+                      className="text-lg font-medium hover:text-accent transition"
+                    >
+                      Projects
+                    </Link>
+                  </nav>
+
+                  {/* Footer CTA inside sheet */}
+                  <div className="pt-6 border-t mt-auto">
+                    <Link
+                      href="/#contact"
+                      className="block w-full text-center bg-primary text-white py-2 rounded-lg font-medium hover:bg-accent/90 transition"
+                    >
+                      Get in Touch
+                    </Link>
+                  </div>
+                </div>
               </SheetContent>
             </Sheet>
           </div>

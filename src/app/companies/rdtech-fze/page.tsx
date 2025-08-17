@@ -84,18 +84,22 @@ export default function page() {
             baseVelocity: 5,
             direction: 1,
             logos: [
-              { name: "Client A", src: "" },
-              { name: "Client B", src: "" },
-              { name: "Client C", src: "" },
+              "banking/bob.png",
+              "health/dubaiHealth.webp",
+              "hotels/armani.png",
+              "hotels/jumeirah.png",
+              "security/sony.webp",
             ],
           },
           {
             baseVelocity: 5,
             direction: -1,
             logos: [
-              { name: "Client D", src: "" },
-              { name: "Client E", src: "" },
-              { name: "Client F", src: "" },
+              "banking/bob.png",
+              "health/dubaiHealth.webp",
+              "hotels/armani.png",
+              "hotels/jumeirah.png",
+              "security/sony.webp",
             ],
           },
         ]}
