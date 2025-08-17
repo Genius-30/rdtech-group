@@ -44,7 +44,7 @@ export default function page() {
         companyName="RDTech FZE"
         slogan="Security Systems & ELV/ICT Solutions"
         description="Pioneering advanced security technology to safeguard critical infrastructure across the UAE. From access control to comprehensive surveillance systems."
-        backgroundImage="/rdtech-bg.jpg"
+        backgroundImage="/general/rdtech/controlRoom.webp"
         companyLogo={<RDTechLogo />}
         projectsLink="/companies/rdtech-fze/#projects"
         websiteLink="https://www.site-technology.com"
@@ -62,7 +62,7 @@ export default function page() {
           { value: "50+", label: "Security Experts" },
         ]}
         image={{
-          src: "",
+          src: "/general/rdtech/cardReader.webp",
           alt: "RDTech FZE Team",
         }}
       />
@@ -71,7 +71,7 @@ export default function page() {
         title="Our Security Solutions"
         services={services}
         image={{
-          src: "",
+          src: "/general/rdtech/dataCenter.webp",
           alt: "RDTech FZE Services",
         }}
       />
@@ -84,22 +84,22 @@ export default function page() {
             baseVelocity: 5,
             direction: 1,
             logos: [
-              "banking/bob.png",
-              "health/dubaiHealth.webp",
-              "hotels/armani.png",
-              "hotels/jumeirah.png",
-              "security/sony.webp",
+              "banking/adcb.webp",
+              "banking/adib.webp",
+              "security/honeywell.webp",
+              "banking/citi.png",
+              "banking/rakbank.webp",
             ],
           },
           {
             baseVelocity: 5,
             direction: -1,
             logos: [
+              "banking/mashreq.webp",
               "banking/bob.png",
-              "health/dubaiHealth.webp",
-              "hotels/armani.png",
-              "hotels/jumeirah.png",
-              "security/sony.webp",
+              "security/bosch.webp",
+              "security/samsung.png",
+              "banking/ajman.webp",
             ],
           },
         ]}

@@ -46,7 +46,7 @@ export default function page() {
         companyName="CoreGrid Solutions"
         slogan="Building Automation & Smart Solutions"
         description="Transforming buildings into intelligent, efficient spaces through cutting-edge automation and control systems. Creating smarter environments for better living and working."
-        backgroundImage="/placeholder.png"
+        backgroundImage="/general/coregrid/realState.png"
         companyLogo={<CoreGridLogo />}
         projectsLink="/companies/core-grid/#projects"
         websiteLink="https://www.loytec.com"
@@ -64,7 +64,7 @@ export default function page() {
           { value: "30+", label: "Automation Experts" },
         ]}
         image={{
-          src: "",
+          src: "/general/coregrid/control.webp",
           alt: "CoreGrid Smart Building",
         }}
       />
@@ -73,7 +73,7 @@ export default function page() {
         title="Our Smart Solutions"
         services={services}
         image={{
-          src: "",
+          src: "/general/coregrid/thermostate.webp",
           alt: "CoreGrid Services",
         }}
       />
@@ -86,18 +86,22 @@ export default function page() {
             baseVelocity: 5,
             direction: 1,
             logos: [
-              { name: "Client A", src: "/logos/client-a.png" },
-              { name: "Client B", src: "/logos/client-b.png" },
-              { name: "Client C", src: "/logos/client-c.png" },
+              "Commercial/bakerHughes.webp",
+              "Commercial/lulu.webp",
+              "Commercial/nakheel.png",
+              "Commercial/vfs.webp",
+              "Commercial/warnerBros.webp"
             ],
           },
           {
             baseVelocity: 5,
             direction: -1,
             logos: [
-              { name: "Client D", src: "/logos/client-d.png" },
-              { name: "Client E", src: "/logos/client-e.png" },
-              { name: "Client F", src: "/logos/client-f.png" },
+              "infrastructure/abuDhabiPolice.webp",
+              "infrastructure/rta.webp",
+              "infrastructure/twofour54.webp",
+              "infrastructure/tdic.webp",
+              "Commercial/nmc.webp"
             ],
           },
         ]}

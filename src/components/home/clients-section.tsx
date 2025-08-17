@@ -2,7 +2,6 @@ import {
   ScrollVelocityContainer,
   ScrollVelocityRow,
 } from "../magicui/scroll-based-velocity";
-
 import { SafeImage } from "../ui/safe-image";
 import SectionHeader from "./section-header";
 
@@ -103,7 +102,7 @@ export default function ClientsSection() {
           {clientRows.map((logos, rowIndex) => (
             <ScrollVelocityRow
               key={rowIndex}
-              baseVelocity={5}
+              baseVelocity={2}
               direction={rowIndex % 2 === 0 ? 1 : -1}
             >
               {logos.map((logo, i) => (

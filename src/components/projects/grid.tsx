@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import { projects } from "../../../public/projectData";
 import { useState } from "react";
+import { SafeImage } from "../ui/safe-image";
 
 const categories = ["All", "Al Ausus", "RDTech", "CoreGrid"];
 
@@ -54,7 +55,7 @@ export default function ProjectsGrid() {
             >
               <Card className="group hover:shadow-xl hover:scale-105 duration-500 py-0 flex flex-col h-full">
                 <div className="relative rounded-t-xl overflow-hidden">
-                  <img
+                  <SafeImage
                     src={project.thumbnail}
                     alt={project.title}
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
