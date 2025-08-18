@@ -3,6 +3,7 @@
 import DottedMap from "dotted-map";
 import { motion } from "motion/react";
 import { useRef } from "react";
+import { SafeImage } from "./safe-image";
 
 interface MapProps {
   dots?: Array<{
@@ -43,7 +44,7 @@ export default function WorldMap({
 
   return (
     <div className="w-full aspect-[2/1] bg-white relative font-sans">
-      <img
+      <SafeImage
         src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
         className="h-full w-full rounded-lg pointer-events-none select-none"
         alt="world map"

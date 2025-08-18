@@ -28,7 +28,7 @@ export default function AboutSection({
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="order-2 lg:order-1">
+          <div className="order-2 lg:order-1 ">
             <h2 className="font-heading text-4xl font-bold text-gray-900 mb-6">
               {title}
             </h2>
@@ -63,9 +63,9 @@ export default function AboutSection({
             <SafeImage
               src={image.src}
               alt={image.alt}
-              width={image.width || 600}
-              height={image.height || 400}
-              className="rounded-xl shadow-lg w-full"
+              width={600}
+              height={400}
+              className="rounded-xl shadow-lg"
             />
           </div>
         </div>

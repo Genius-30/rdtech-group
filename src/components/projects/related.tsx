@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { projects } from '../../../public/projectData'
+import { SafeImage } from "../ui/safe-image"
 
 interface RelatedProjectsProps {
   currentProjectId: string
@@ -19,7 +20,7 @@ export function RelatedProjects({ currentProjectId }: RelatedProjectsProps) {
             <Link key={project.id} href={`/projects/${project.slug}`} className="h-full">
               <Card className="group hover:shadow-xl hover:scale-105 duration-500 py-0 flex flex-col h-full">
                 <div className="relative rounded-t-xl overflow-hidden">
-                  <img
+                  <SafeImage
                     src={project.thumbnail}
                     alt={project.title}
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"

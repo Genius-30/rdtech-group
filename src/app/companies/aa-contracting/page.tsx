@@ -51,7 +51,7 @@ export default function page() {
         companyName="AA Contracting"
         slogan="Al Ausus Al Arbaa General Contracting"
         description="Delivering comprehensive construction and contracting services with precision and reliability. Building the infrastructure of tomorrow across the UAE."
-        backgroundImage="/placeholder.png"
+        backgroundImage="/general/aa/crane_2.jpg"
         companyLogo={<AAContractingLogo />}
         projectsLink="/companies/aa-contracting/#projects"
         websiteLink=""
@@ -69,7 +69,7 @@ export default function page() {
           { value: "80+", label: "Construction Experts" },
         ]}
         image={{
-          src: "",
+          src: "/general/aa/crane.jpg",
           alt: "AA Contracting Team",
         }}
       />
@@ -77,7 +77,10 @@ export default function page() {
       <ServicesSection
         title="Our Construction Services"
         services={services}
-        image={{ src: "", alt: "AA Contracting Services" }}
+        image={{
+          src: "/general/aa/plan.webp",
+          alt: "AA Contracting Services",
+        }}
       />
 
       <ClientsSection
@@ -87,12 +90,24 @@ export default function page() {
           {
             baseVelocity: 5,
             direction: 1,
-            logos: [""],
+            logos: [
+              "health/alZahra.webp",
+              "health/dubaiHealth.webp",
+              "health/zulekha.webp",
+              "hotels/jumeirah.png",
+              "hotels/anantara.webp",
+            ],
           },
           {
             baseVelocity: 5,
             direction: -1,
-            logos: [""],
+            logos: [
+              "hotels/armani.png",
+              "hotels/marriott.webp",
+              "hotels/pullman.png",
+              "topEnterprise/majid.webp",
+              "topEnterprise/accor.png",
+            ],
           },
         ]}
       />

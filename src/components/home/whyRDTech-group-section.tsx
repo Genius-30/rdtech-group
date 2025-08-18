@@ -17,49 +17,46 @@ import SectionHeader from "./section-header";
 const features = [
   {
     icon: Key,
-    title: "Turnkey Solution Provider",
-    subtitle: "& integrator",
+    title: "Turnkey Solutions",
+    subtitle: "End-to-end integration & delivery",
   },
   {
     icon: Clock,
-    title: "24/7",
-    subtitle: "Support",
+    title: "24/7 Availability",
+    subtitle: "Round-the-clock support",
   },
   {
     icon: DollarSign,
-    title: "Cost-effective solutions",
+    title: "Cost-Effective",
+    subtitle: "Optimized, value-driven solutions",
   },
   {
     icon: Layers,
-    title: "Focus on core needs &",
-    subtitle: "Modular Upgrades",
+    title: "Modular & Scalable",
+    subtitle: "Future-ready system upgrades",
   },
   {
     icon: Cpu,
-    title: "Hardware & Software",
-    subtitle: "Updated",
+    title: "Cutting-Edge Technology",
+    subtitle: "Latest hardware & software",
   },
   {
     icon: Gauge,
-    title: "Fast Implementation Downtime",
-    subtitle: "Solution Delivery",
+    title: "Fast Implementation",
+    subtitle: "Zero-downtime delivery",
   },
   {
     icon: Cable,
-    title: "Own Cabling and Networking",
-    subtitle: "CIVIL & MEP Work Team",
+    title: "In-House Cabling",
+    subtitle: "Civil, MEP & networking expertise",
   },
   {
     icon: Users,
-    title: "Dedicated Support Team",
-    subtitle: "& Converged Network Engineers",
-  },
-  {
-    icon: ThumbsUp,
-    title: "Highest level of partnership",
-    subtitle: "Vendor",
+    title: "Expert Support Team",
+    subtitle: "Certified engineers & specialists",
   },
 ];
+
 
 export default function WhyRDTechGroup() {
   return (

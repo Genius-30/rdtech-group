@@ -48,8 +48,8 @@ export async function generateMetadata({
   };
 }
 
-export default function ProjectPage({ params }: Readonly<ProjectPageProps>) {
-  const project = projects.find((p) => p.slug === params.slug);
+export default async function ProjectPage({ params }: Readonly<ProjectPageProps>) {
+  const project = projects.find(async (p) => p.slug === (await params).slug);
 
   if (!project) {
     notFound();

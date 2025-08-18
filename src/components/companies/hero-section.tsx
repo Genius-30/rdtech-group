@@ -39,7 +39,7 @@ export default function HeroSection({
           {/* Company Logo */}
           {companyLogo && (
             <FadeIn delay={150}>
-              <div className="bg-white/20 rounded-full flex items-center justify-center aspect-square">
+              <div className="bg-white/50 rounded-full flex items-center justify-center aspect-square">
                 {companyLogo}
               </div>
             </FadeIn>
@@ -61,7 +61,7 @@ export default function HeroSection({
 
           {/* Description */}
           <FadeIn delay={400}>
-            <p className="text-lg md:text-xl mb-8 text-muted max-w-2xl mx-auto font-medium text-shadow-lg text-shadow-black/20">
+            <p className="text-lg md:text-xl mb-8 text-muted max-w-2xl mx-auto font-medium text-shadow-lg text-shadow-black/40">
               {description}
             </p>
           </FadeIn>

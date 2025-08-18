@@ -1,15 +1,11 @@
-"use client";
-
-import { ArrowLeft } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
-import Link from "next/link";
-import type { Project } from "../../../public/projectData";
-import { SafeImage } from "../ui/safe-image";
-import { useState } from "react";
+import { Badge } from "@/components/ui/badge"
+import { Card } from "@/components/ui/card"
+import { ArrowLeft } from "lucide-react"
+import Link from "next/link"
+import type { Project } from "../../../public/projectData" 
+import { SafeImage } from "../ui/safe-image"
 
 export function ProjectDetail({ project }: { project: Project }) {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen" data-header-theme="light">
@@ -35,19 +31,22 @@ export function ProjectDetail({ project }: { project: Project }) {
           </div>
         </div>
       </div>
-
+      
       {/* Hero Image */}
       <div className="relative max-w-7xl mx-auto rounded-xl h-96 md:h-[600px] overflow-hidden">
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat blur-xl transform scale-110"
+          style={{ backgroundImage: `url(${project.heroImage || ""})` }}
+        />
         <SafeImage
           src={project.heroImage || ""}
           alt={project.title}
-          width={1200}
-          height={600}
-          className="w-full h-full object-cover object-center"
+          width={2266}
+          height={675}
+          className="relative z-10 h-full w-full object-contain "
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
       </div>
-
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Project Details */}
@@ -126,7 +125,6 @@ export function ProjectDetail({ project }: { project: Project }) {
               <div
                 key={index}
                 className="relative group cursor-pointer overflow-hidden rounded-lg"
-                onClick={() => setSelectedImage(image)}
               >
                 <SafeImage
                   src={image || ""}
