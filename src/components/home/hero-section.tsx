@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
 import Link from "next/link";
@@ -28,7 +29,6 @@ export default function HeroSection() {
       className={`relative min-h-screen flex items-center justify-center overflow-hidden bg-fixed bg-cover ${
         current === 2 ? "bg-bottom" : "bg-top"
       }`}
-      data-header-theme="light"
       style={{
         backgroundImage: `url('${images[current]}')`,
       }}
@@ -54,7 +54,7 @@ export default function HeroSection() {
       </div> */}
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center text-white">
+      <div className="relative z-10 container mx-auto px-4 text-center text-white mt-16">
         <div className="max-w-4xl mx-auto flex flex-col mt-18 sm:mt-10 items-center justify-center">
           <FadeIn delay={200}>
             <h1 className="font-mono text-5xl md:text-7xl font-bold mb-6 text-shadow-lg text-shadow-black/20">

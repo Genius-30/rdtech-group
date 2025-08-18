@@ -57,45 +57,17 @@ const companies = [
 
 export function Header() {
   const [showOverview, setShowOverview] = useState(false);
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const newTheme = entry.target.getAttribute("data-header-theme") as
-              | "light"
-              | "dark";
-            if (newTheme) {
-              setTheme(newTheme);
-            }
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    document
-      .querySelectorAll("[data-header-theme]")
-      .forEach((el) => observer.observe(el));
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
+  const linkClass = () =>
+    `relative text-sm font-medium after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all hover:after:w-full bg-transparent hover:bg-transparent px-1 py-1.5 text-white hover:text-white`;
 
   return (
-    <header
-      className={`fixed top-0 z-[99] w-full ${
-        theme === "light" ? "text-white" : "text-black"
-      } ${showOverview && "text-white"}`}
-    >
-      <div className="container mx-auto px-4">
+    <header className="fixed top-0 z-[99] w-full bg-black/40 backdrop-blur-md">
+      <div className="container mx-auto max-md:px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <RDTechGroupLogo size={120} className="" />
+            <RDTechGroupLogo iconSize={35} textSize={70} className="invert" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -103,16 +75,14 @@ export function Header() {
             <Link
               href="/about"
               onMouseEnter={() => setShowOverview(false)}
-              className="relative text-sm font-medium after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all hover:after:w-full px-1 bg-transparent hover:bg-transparent py-1.5"
+              className={linkClass()}
             >
               About
             </Link>
 
             <button
               onMouseEnter={() => setShowOverview(true)}
-              className={`relative text-sm font-medium after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all hover:after:w-full px-1 bg-transparent hover:bg-transparent py-1.5 cursor-pointer ${
-                showOverview && "after:w-full"
-              }`}
+              className={`${linkClass()} ${showOverview && "after:w-full"}`}
             >
               Group Overview
             </button>
@@ -120,7 +90,7 @@ export function Header() {
             <Link
               href="/projects"
               onMouseEnter={() => setShowOverview(false)}
-              className="relative text-sm font-medium after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all hover:after:w-full px-1 bg-transparent hover:bg-transparent py-1.5"
+              className={linkClass()}
             >
               Projects
             </Link>
@@ -128,28 +98,27 @@ export function Header() {
             <Link
               href="/#contact"
               onMouseEnter={() => setShowOverview(false)}
-              className="relative text-sm font-medium after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all hover:after:w-full px-1 bg-transparent hover:bg-transparent py-1.5"
+              className={linkClass()}
             >
               Contact
             </Link>
           </nav>
 
           <div
-            role="button"
             onMouseEnter={() => setShowOverview(true)}
             onMouseLeave={() => setShowOverview(false)}
             className={`max-md:hidden absolute  ${
               showOverview ? "top-0" : "-top-70"
             } left-0 w-full shadow-lg bg-gradient-to-b from-black from-[0%] via-black/80 via-[90%] to-black/60 to-[100%] backdrop-blur-xs -z-[10] duration-300 transform`}
           >
-            <div className="w-full grid grid-cols-3 gap-6 max-w-3xl mx-auto mt-10 py-4">
+            <div className="w-full grid grid-cols-3 gap-6 max-w-3xl mx-auto mt-10 pt-4">
               {companies.map((company) => {
                 const Logo = company.logo;
                 return (
                   <Link
                     key={company.name}
                     href={company.href}
-                    className="group space-y-2 rounded-lg p-4 transition-colors hover:border-b-accent border-transparent border-4 rounded-b-none"
+                    className="relative group space-y-2 rounded-lg p-4 transition-colors after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all hover:after:w-full"
                   >
                     <div className="flex items-center space-x-3">
                       <div className="flex-shrink-0 w-12 h-12 rounded-md bg-muted flex items-center justify-center">
@@ -179,17 +148,13 @@ export function Header() {
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Menu
-                  className={`h-6 w-6 ${
-                    theme == "dark" ? "text-black" : "text-white"
-                  }`}
-                />
+                <Menu className="h-6 w-6 text-white" />
               </SheetTrigger>
               <SheetContent side="right" className="p-6 gap-6 z-[100]">
                 <div className="flex flex-col h-full">
                   {/* Logo */}
                   <Link href="/" className="flex items-center mb-6">
-                    <RDTechGroupLogo size={100} />
+                    <RDTechGroupLogo iconSize={30} textSize={65} />
                   </Link>
 
                   <nav className="flex flex-col gap-4 flex-1">

@@ -2,16 +2,27 @@ import React from "react";
 import { SafeImage } from "../ui/safe-image";
 
 export default function RDTechGroupLogo({
-  size = 100,
+  iconSize = 50,
+  textSize = 50,
   className = "",
-}: { readonly size?: number; readonly className?: string } = {}) {
+}: {
+  readonly iconSize?: number;
+  readonly textSize?: number;
+  readonly className?: string;
+} = {}) {
   return (
-    <div>
+    <div className="flex items-center gap-1">
       <SafeImage
-        src="/logos/rdtech-group-logo.png"
+        src="/logos/rdtech-group-logo1.png"
         alt="Logo"
-        width={size}
-        height={size}
+        width={iconSize}
+        height={iconSize}
+      />
+      <SafeImage
+        src="/logos/rdtech-group-logo2.png"
+        alt="Logo"
+        width={textSize}
+        height={textSize}
         className={className}
       />
     </div>

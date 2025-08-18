@@ -1,14 +1,13 @@
-import { Badge } from "@/components/ui/badge"
-import { Card } from "@/components/ui/card"
-import { ArrowLeft } from "lucide-react"
-import Link from "next/link"
-import type { Project } from "../../../public/projectData" 
-import { SafeImage } from "../ui/safe-image"
+import { ArrowLeft } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
+import Link from "next/link";
+import type { Project } from "../../../public/projectData";
+import { SafeImage } from "../ui/safe-image";
 
 export function ProjectDetail({ project }: { project: Project }) {
-
   return (
-    <div className="min-h-screen" data-header-theme="light">
+    <div className="min-h-screen">
       {/* Header */}
       <div className="bg-card">
         <div className="max-w-7xl mx-auto px-6 py-6">
@@ -31,7 +30,7 @@ export function ProjectDetail({ project }: { project: Project }) {
           </div>
         </div>
       </div>
-      
+
       {/* Hero Image */}
       <div className="relative max-w-7xl mx-auto rounded-xl h-96 md:h-[600px] overflow-hidden">
         <div

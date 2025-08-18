@@ -66,10 +66,7 @@ export default function CompaniesSection() {
   ];
 
   return (
-    <section
-      className="min-h-screen flex flex-col py-20 bg-gray-100"
-      data-header-theme="dark"
-    >
+    <section className="min-h-screen flex flex-col py-20 bg-gray-100">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <SectionHeader

@@ -25,7 +25,7 @@ export default function ClientsSection({
   rows,
 }: Readonly<ClientsSectionProps>) {
   return (
-    <section className="py-10 max-sm:px-4 bg-gray-100" data-header-theme="dark">
+    <section className="py-10 max-sm:px-4 bg-gray-100">
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-2 md:gap-12 items-center">
         {/* Left Content */}
         <div className="p-4">

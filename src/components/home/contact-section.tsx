@@ -35,7 +35,6 @@ export default function ContactSection() {
     <section
       id="contact"
       className="min-h-screen flex flex-col items-center py-20 bg-gray-100"
-      data-header-theme="dark"
     >
       <div className="w-full max-w-7xl mx-auto">
         {/* Heading */}

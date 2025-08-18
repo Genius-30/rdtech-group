@@ -27,14 +27,13 @@ export default function HeroSection({
   return (
     <section
       className="relative min-h-screen flex items-center bg-fixed bg-cover justify-center overflow-hidden py-12"
-      data-header-theme="light"
       style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center text-white">
+      <div className="relative z-10 container mx-auto px-4 text-center text-white mt-16">
         <div className="max-w-4xl mx-auto flex flex-col mt-18 sm:mt-10 items-center justify-center">
           {/* Company Logo */}
           {companyLogo && (

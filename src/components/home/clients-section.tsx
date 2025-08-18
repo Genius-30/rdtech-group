@@ -2,6 +2,7 @@ import {
   ScrollVelocityContainer,
   ScrollVelocityRow,
 } from "../magicui/scroll-based-velocity";
+
 import { SafeImage } from "../ui/safe-image";
 import SectionHeader from "./section-header";
 
@@ -88,10 +89,7 @@ export default function ClientsSection() {
   );
 
   return (
-    <section
-      className="relative py-20 overflow-hidden bg-gray-100"
-      data-header-theme="dark"
-    >
+    <section className="relative py-20 overflow-hidden bg-gray-100">
       <SectionHeader
         title="Our Clients"
         subTitle="Trusted by leading organizations across industries for mission-critical technology solutions."

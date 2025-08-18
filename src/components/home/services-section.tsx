@@ -1,4 +1,11 @@
-import { Building, Hammer, Factory, Network, Server, Shield } from "lucide-react";
+import {
+  Building,
+  Factory,
+  Hammer,
+  Network,
+  Server,
+  Shield,
+} from "lucide-react";
 
 import { FadeIn } from "@/components/ui/fade-in";
 import { SafeImage } from "../ui/safe-image";
@@ -6,61 +13,59 @@ import SectionHeader from "./section-header";
 
 export default function ServicesSection() {
   const services = [
-  // RDTech
-  {
-    icon: Shield,
-    title: "Security & Surveillance",
-    description:
-      "CCTV, facial recognition, access control, and AI-powered surveillance for mission-critical security.",
-    thumbnail: "/general/rdtech/cctv.png",
-  },
-  {
-    icon: Network,
-    title: "Network & Communication",
-    description:
-      "End-to-end structured cabling, converged voice & data, and 24/7 enterprise-grade network solutions.",
-    thumbnail: "/general/rdtech/fiber.webp"
-  },
+    // RDTech
+    {
+      icon: Shield,
+      title: "Security & Surveillance",
+      description:
+        "CCTV, facial recognition, access control, and AI-powered surveillance for mission-critical security.",
+      thumbnail: "/general/rdtech/cctv.png",
+    },
+    {
+      icon: Network,
+      title: "Network & Communication",
+      description:
+        "End-to-end structured cabling, converged voice & data, and 24/7 enterprise-grade network solutions.",
+      thumbnail: "/general/rdtech/fiber.webp",
+    },
 
-  // Al Ausus
-  {
-    icon: Hammer,
-    title: "General Contracting",
-    description:
-      "Multi-disciplinary contracting services across civil, MEP, and infrastructure projects.",
-    thumbnail: "/general/aa/plan_3.webp",
-  },
-  {
-    icon: Factory,
-    title: "Infrastructure Development",
-    description:
-      "End-to-end project delivery including design, fit-out, and large-scale construction works.",
-    thumbnail: "/general/aa/worker.webp",
-  },
+    // Al Ausus
+    {
+      icon: Hammer,
+      title: "General Contracting",
+      description:
+        "Multi-disciplinary contracting services across civil, MEP, and infrastructure projects.",
+      thumbnail: "/general/aa/plan_3.webp",
+    },
+    {
+      icon: Factory,
+      title: "Infrastructure Development",
+      description:
+        "End-to-end project delivery including design, fit-out, and large-scale construction works.",
+      thumbnail: "/general/aa/worker.webp",
+    },
 
-  // CoreGrid
-  {
-    icon: Building,
-    title: "Building Automation",
-    description:
-      "Smart control systems for real estate and infrastructure with secure remote access and data visualization.",
-    thumbnail: "/general/coregrid/realState_2.webp",
-  },
-  {
-    icon: Server,
-    title: "Data & Control Solutions",
-    description:
-      "Intelligent integration for monitoring, storage, and automated facility management.",
-    thumbnail: "/general/rdtech/dataCenter_2.webp",
-  },
-];
-
+    // CoreGrid
+    {
+      icon: Building,
+      title: "Building Automation",
+      description:
+        "Smart control systems for real estate and infrastructure with secure remote access and data visualization.",
+      thumbnail: "/general/coregrid/realState_2.webp",
+    },
+    {
+      icon: Server,
+      title: "Data & Control Solutions",
+      description:
+        "Intelligent integration for monitoring, storage, and automated facility management.",
+      thumbnail: "/general/rdtech/dataCenter_2.webp",
+    },
+  ];
 
   return (
     <section
       id="services"
       className="min-h-screen flex flex-col py-20 max-w-7xl mx-auto "
-      data-header-theme="dark"
     >
       {/* Heading row */}
       <SectionHeader

@@ -3,9 +3,9 @@
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
+import { SafeImage } from "../ui/safe-image";
 import { projects } from "../../../public/projectData";
 import { useState } from "react";
-import { SafeImage } from "../ui/safe-image";
 
 const categories = ["All", "Al Ausus", "RDTech", "CoreGrid"];
 
@@ -58,6 +58,8 @@ export default function ProjectsGrid() {
                   <SafeImage
                     src={project.thumbnail}
                     alt={project.title}
+                    width={600}
+                    height={400}
                     className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

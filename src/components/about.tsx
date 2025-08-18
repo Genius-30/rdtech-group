@@ -38,7 +38,6 @@ export default function About() {
       <section
         className="relative h-[80vh] bg-fixed bg-bottom bg-cover"
         style={{ backgroundImage: "url('/about/dubai_1.jpg')" }}
-        data-header-theme="light"
       >
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/50"></div>
