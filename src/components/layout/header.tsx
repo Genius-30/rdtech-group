@@ -135,6 +135,8 @@ export function Header() {
           </nav>
 
           <div
+            role="button"
+            onMouseEnter={() => setShowOverview(true)}
             onMouseLeave={() => setShowOverview(false)}
             className={`max-md:hidden absolute  ${
               showOverview ? "top-0" : "-top-70"

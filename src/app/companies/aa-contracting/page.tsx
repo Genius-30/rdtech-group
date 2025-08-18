@@ -87,20 +87,12 @@ export default function page() {
           {
             baseVelocity: 5,
             direction: 1,
-            logos: [
-              { name: "Client A", src: "/logos/client-a.png" },
-              { name: "Client B", src: "/logos/client-b.png" },
-              { name: "Client C", src: "/logos/client-c.png" },
-            ],
+            logos: [""],
           },
           {
             baseVelocity: 5,
             direction: -1,
-            logos: [
-              { name: "Client D", src: "/logos/client-d.png" },
-              { name: "Client E", src: "/logos/client-e.png" },
-              { name: "Client F", src: "/logos/client-f.png" },
-            ],
+            logos: [""],
           },
         ]}
       />
